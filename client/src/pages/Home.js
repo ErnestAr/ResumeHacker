@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
 
-function Homepage() {
+export default function Homepage() {
     return(
         <Container>
             <Navbar />
@@ -11,4 +11,3 @@ function Homepage() {
     )
 }
 
-export default Homepage();
