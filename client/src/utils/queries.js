@@ -1,23 +1,24 @@
 import { gql } from '@apollo/client';
 
 
-export const QUERY_USER = gql`
-  {
-    user {
-      firstName
-      lastName
-      orders {
-        _id
-        purchaseDate
-        products {
-          _id
-          name
-          description
-          price
-          quantity
-          image
-        }
-      }
+import { gql } from '@apollo/client';
+
+export const QUERY_USERS = gql`
+  query allUsers {
+    users {
+      userName
+      email
+      password
+    }
+  }
+`;
+
+export const QUERY_SINGLE_USERS = gql`
+  query singleUser($userId: ID!) {
+    user(userId: $userId) {
+      userName
+      email
+      password
     }
   }
 `;
