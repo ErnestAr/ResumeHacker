@@ -4,12 +4,7 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  lastName: {
+  userName: {
     type: String,
     required: true,
     trim: true
@@ -25,10 +20,10 @@ const userSchema = new Schema({
     minlength: 5
   },
 
-  resume: {
-    type: Schema.ObjectId,
-    ref: 'Resume'
-  },
+  // resume: {
+  //   type: Schema.ObjectId,
+  //   ref: 'Resume'
+  // },
 
 });
 
