@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const resumeSchema = new Schema({
+const commentSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -17,6 +17,10 @@ const resumeSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
+  comment: {
+    type: Schema.ObjectId,
+    ref: 'Comment'
+  },
   createdAt: {
     type: Date,
     default: Date.now
@@ -27,6 +31,6 @@ const resumeSchema = new Schema({
   }
 });
 
-const Resume = mongoose.model('Resume', resumeSchema);
+const Comments = mongoose.model('Comments', commentSchema);
 
-module.exports = Resume;
+module.exports = Comments;

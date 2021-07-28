@@ -23,7 +23,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5
-  }
+  },
+  resume: {
+    type: Schema.ObjectId,
+    ref: 'Resume'
+  },
 });
 
 // set up pre-save middleware to create password
