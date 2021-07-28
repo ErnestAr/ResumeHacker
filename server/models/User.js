@@ -24,6 +24,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+
+  resume: {
+    type: Schema.ObjectId,
+    ref: 'Resume'
+  },
+
 });
 
 // set up pre-save middleware to create password
