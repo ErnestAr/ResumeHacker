@@ -1,4 +1,7 @@
-module.exports = ({ name, price1, price2, receiptId }) => {
+module.exports = ({ FirstName,
+LastName,
+Cell,
+Email,}) => {
     const today = new Date();
 return `
         <!DOCTYPE html>
