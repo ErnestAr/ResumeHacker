@@ -1,11 +1,8 @@
 body {    
-    margin: 0 !important;
-    padding: 0 !important;
     position: relative;
-    height: 100%;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #000;
+    color: #16425B
 }
 
 
@@ -13,6 +10,17 @@ span:hover {
     color:#16425B;
 }
 
+.nav-text {
+  float:right;
+}
+
+.resource-images{
+  box-shadow: 1px 1px 10px grey;
+}
+
+.resource-images:hover{
+  box-shadow: 1px 1px 10px rgb(43, 42, 42);
+}
 
 /* --------------SWIPER STYLING--------------- */
 .swiper-container {
