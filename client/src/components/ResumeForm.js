@@ -48,7 +48,7 @@ export default class ResumeForm extends React.Component {
                           
                         </form>
                         <div className="row justify-content-end">
-                                 <button type="submit" className="btn-block btn-primary me-2 col-3">Create Interactive Resume</button>  
+                                <button type="submit" className="btn-block btn-primary me-2 col-3">Create Interactive Resume</button>  
                         </div> 
                     </div>
                     <div className="row justify-content-end">
