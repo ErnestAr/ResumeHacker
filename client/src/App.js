@@ -9,10 +9,6 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import LoginSignUp  from './pages/LoginSignUp';
 
 
-
-
-
-
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

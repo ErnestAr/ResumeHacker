@@ -1,32 +1,100 @@
-.Dashboard {
-  text-align: center;
+:root {
+    --primary: #A1E8EE;
+    --secondary: #3A7CA5;
+    --tertiary: #0A2239;
 }
 
-.Dashboard-logo {
-  animation: Dashboard-logo-spin infinite 20s linear;
-  height: 40vmin;
+h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, dl, dt, dd, figure, figcaption, div, table, tr, td, th, form, label, input, select, option, textarea, button {
+  color: var(--tertiary);
 }
 
-.Dashboard-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* * {
+  border: 2px solid black;
+} */
+
+.bg-color {
+  background-color: var(--primary);
 }
 
-.Dashboard-link {
-  color: #61dafb;
+.bg-color-secondary {
+  background-color: var(--secondary);
 }
 
-@keyframes Dashboard-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-acc {
+  cursor: pointer;
+}
+
+.btn-acc:hover{
+
+ box-shadow: 3px 3px  var(--tertiary);
+}
+
+.solid {
+  font-style: italic;
+}
+
+.color-sc {
+  color: var(--secondary);
+}
+.border-sc {
+  border: 2px solid var(--secondary);
+}
+
+
+.card {
+  padding: 30px 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: none !important;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.blue-text {
+  color: #00BCD4
+}
+
+.form-control-label {
+  margin-bottom: 0
+}
+
+input,
+textarea,
+button {
+  padding: 8px 15px;
+  border-radius: 5px !important;
+  margin: 5px 0px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 18px !important;
+  font-weight: 300
+}
+
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #00BCD4;
+  outline-width: 0;
+  font-weight: 400
+}
+
+.btn-block {
+  text-transform: uppercase;
+  font-size: 15px !important;
+  font-weight: 400;
+  height: 43px;
+  cursor: pointer
+}
+
+.btn-block:hover {
+  color: #fff !important
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
 }
