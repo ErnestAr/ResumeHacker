@@ -6,7 +6,7 @@ const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const pdf = require('html-pdf');
 const cors = require('cors');
-const pdfTemplate = require('./documents/template1');
+// const pdfTemplate = require('./documents/template1');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -39,17 +39,17 @@ db.once('open', () => {
   });
 });
 
-app.post('/create-pdf', (req, res) => {
-  pdf.create(pdfTemplate(req.body), {}).toFile('result1.pdf', (err) => {
-      if(err) {
-          res.send(Promise.reject());
-      }
+// app.post('/create-pdf', (req, res) => {
+//   pdf.create(pdfTemplate(req.body), {}).toFile('result1.pdf', (err) => {
+//       if(err) {
+//           res.send(Promise.reject());
+//       }
 
-      res.send(Promise.resolve());
-  });
-});
+//       res.send(Promise.resolve());
+//   });
+// });
 
-app.get('/fetch-pdf', (req, res) => {
-  res.sendFile(path.join(__dirname, '../server/result1.pdf'));
-})
+// app.get('/fetch-pdf', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../server/result1.pdf'));
+// })
 
