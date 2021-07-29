@@ -1,7 +1,13 @@
 :root {
     --primary: #A1E8EE;
     --secondary: #3A7CA5;
+    --tertiary: #0A2239;
 }
+
+h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, dl, dt, dd, figure, figcaption, div, table, tr, td, th, form, label, input, select, option, textarea, button {
+  color: var(--tertiary);
+}
+
 
 /* * {
   border: 2px solid black;
@@ -20,11 +26,17 @@
 }
 
 .btn-acc:hover{
- opacity: 0.8;
- box-shadow: 3px 3px 3px #000;
+
+ box-shadow: 3px 3px  var(--tertiary);
 }
 
 .solid {
   font-style: italic;
 }
 
+.color-sc {
+  color: var(--secondary);
+}
+.border-sc {
+  border: 2px solid var(--secondary);
+}
