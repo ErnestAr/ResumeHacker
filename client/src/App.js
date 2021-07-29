@@ -10,9 +10,6 @@ import LoginSignUp  from './pages/LoginSignUp';
 
 
 
-
-
-
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

@@ -8,16 +8,19 @@ import '../App.css'
 
 function theNavbar() {
     return (
-        <Navbar>
-            <Container >
-                <Nav className="me-auto">
-                    <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
-                    <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
-                    <Nav.Link className='navbar-link' href="/Dashboard"><span>Dashboard</span></Nav.Link>
-                    <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Login/Signup</span></Nav.Link>
-                </Nav>
-            </Container>
-        </Navbar>
+        <div style={{width:'100vw'}}>
+            <Navbar className='nav-text'>
+                <Container >
+                    <Nav className="me-auto " >
+                        <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/Dashboard"><span>Dashboard</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Login/Signup</span></Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
+        </div>
+    
     );
 }
 
