@@ -7,10 +7,7 @@ import Home  from './components/pages/Home';
 import About  from './components/pages/About';
 import Dashboard from './components/pages/Dashboard';
 import LoginSignUp  from './components/pages/LoginSignUp';
-
-
-
-
+import './App.css'
 
 
 
