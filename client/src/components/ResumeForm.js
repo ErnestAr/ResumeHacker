@@ -4,7 +4,12 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import { Link } from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
-import { JSZip } from 'jszip';
+import JSZip from 'jszip';
+import fileinfo from './import';
+const zip = new JSZip();
+const fs = require('fs');
+
+
 export default class ResumeForm extends React.Component {
     state = {
         FirstName: '',
@@ -12,32 +17,27 @@ export default class ResumeForm extends React.Component {
         Cell: '',
         Email: '',
       }
+
+      // save values to state
       handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
-      async downloadTemplate(event) {
-        event.preventDefault();
-        console.log('where am I?')
-        try {
-          const response = await axios.get('/download');
-            console.log(response.data)
-            saveAs(response.data, 'Navbar.js');
-          
-        } catch (error) {
-          console.error(error);
-        }
-      }
-      
+
+
+  
+      // create zip file and initialize download
       createzip() {
-        const zip = new JSZip();
-        zip.file("Hello.txt", "Hello World\n");
-        zip.generateAsync({type:"blob"}).then(function(content) {
-          // see FileSaver.js
-          saveAs(content, "example.zip");
-      });
+       
+        zip.file("Navbar.js", fileinfo());
+            zip.generateAsync({type:"blob"}).then(function (blob) { 
+                saveAs(blob, "template1.zip");                          
+            }, function (err) {
+                console.error(err);
+            });
       }
+      // router control
       nextPath(path) {
         this.props.history.push(path);
       }
-       // name="name" onChange={this.handleChange} <input type="number" placeholder="Receipt ID" name="receiptId" onChange={this.handleChange} />
+
       render() {
     return (
       <main className=" col-9 p-1">
