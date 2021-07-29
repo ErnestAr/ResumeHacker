@@ -34,15 +34,15 @@ class Dashboard extends Component {
     return (
       <div className="dashboard row mt-5 p-3">
           <aside className="col-3 bd-highlight  ">
-            <div className="col-10">
+            <div className="col-10 bg-color rounded">
               <VscAccount className="p-2 mb-3 m-1" size="275px"/>
-              <h3 className="text-center" >Username</h3>
-              <h3>Email</h3>
+              <h5 className="bg-color-secondary" >Username: <solid className="solid">TestUsername</solid></h5>
+              <h5  className="bg-color-secondary">Email: <solid className="solid">TestUsername</solid></h5>
             </div>
             <div  className="col-10 mt-3">
-              <h3 className="text-center">Acoount Settings</h3> 
-              <h3 className="text-center">Update Information</h3>
-              <h3 className="text-center">Delete Sccount</h3>
+              <h3 className="text-center bg-color-secondary rounded ">Acoount Settings</h3> 
+              <h3 className="text-center bg-color rounded btn-acc">Update Information</h3>
+              <h3 className="text-center bg-color rounded btn-acc">Delete Sccount</h3>
             </div>
           </aside>
           <main className=" col-9 wm">

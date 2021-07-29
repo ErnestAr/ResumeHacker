@@ -1,11 +1,30 @@
 :root {
     --primary: #A1E8EE;
+    --secondary: #3A7CA5;
 }
 
-* {
+/* * {
   border: 2px solid black;
-}
+} */
 
 .bg-color {
   background-color: var(--primary);
 }
+
+.bg-color-secondary {
+  background-color: var(--secondary);
+}
+
+.btn-acc {
+  cursor: pointer;
+}
+
+.btn-acc:hover{
+ opacity: 0.8;
+ box-shadow: 3px 3px 3px #000;
+}
+
+.solid {
+  font-style: italic;
+}
+
