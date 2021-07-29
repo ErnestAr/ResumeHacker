@@ -17,6 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "jszip": "^3.7.0",
     "react-bootstrap": "^1.6.1",
     "react-icons": "^4.2.0"
   }

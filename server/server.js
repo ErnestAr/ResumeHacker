@@ -4,9 +4,8 @@ const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
-const pdf = require('html-pdf');
 const cors = require('cors');
-// const pdfTemplate = require('./documents/template1');
+
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -53,3 +52,9 @@ db.once('open', () => {
 //   res.sendFile(path.join(__dirname, '../server/result1.pdf'));
 // })
 
+
+app.get('/download', function(req, res){
+  const file = './download/template1';
+  console.log(file)
+res.download(file); // Set disposition and send it.
+});
