@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ResumeHacker', {
+
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

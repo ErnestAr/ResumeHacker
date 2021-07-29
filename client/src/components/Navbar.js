@@ -12,8 +12,8 @@ function theNavbar() {
             <Container >
                 <Nav className="me-auto">
                     <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
-                    <Nav.Link className='navbar-link' href="/Dashboard"><span>Dashboard</span></Nav.Link>
                     <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
+                    <Nav.Link className='navbar-link' href="/Dashboard"><span>Dashboard</span></Nav.Link>
                     <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Login/Signup</span></Nav.Link>
                 </Nav>
             </Container>

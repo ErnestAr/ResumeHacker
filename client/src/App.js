@@ -3,11 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 //IMPORT PAGES
-import Home  from './components/pages/Home';
-import About  from './components/pages/About';
-import Dashboard from './components/pages/Dashboard';
-import LoginSignUp  from './components/pages/LoginSignUp';
-
+import Home  from './pages/Home';
+import About  from './pages/About';
+import Dashboard from './pages/Dashboard/Dashboard';
+import LoginSignUp  from './pages/LoginSignUp';
 
 
 

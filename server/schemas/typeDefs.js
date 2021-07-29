@@ -1,44 +1,31 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
-const { signToken } = require('../utils/auth');
 
-const resolvers = {
-    Query: {
-        users: async () => {
-          return User.find();
-        },
-    
-        user: async (parent, { userId }) => {
-          return User.findOne({ _id: userId });
-        },
-    },
+const { gql } = require('apollo-server-express');
 
-    Mutation: {
-        addUser: async (parent, { userName, email, password }) => {
-          const user = await User.create({ userName, email, password });
-          const token = signToken(user);
-    
-          return { token, user };
-        },
-        login: async (parent, { userName, password }) => {
-          const user = await User.findOne({ userName });
-    
-          if (!user) {
-            throw new AuthenticationError('No profile with this email found!');
-          }
-    
-          const correctPw = await user.isCorrectPassword(password);
-    
-          if (!correctPw) {
-            throw new AuthenticationError('Incorrect password!');
-          }
-    
-          const token = signToken(user);
-          return { token, user };
-        },
-    
-        
-    },
-}
+const typeDefs = gql`
 
-module.exports = resolvers;
+  type User {
+    _id: ID
+    firstName: String
+    lastName: String
+    email: String
+  }
+
+  type Auth {
+    token: ID
+    user: User
+  }
+
+  type Query {
+    users: [User]
+    user:  User
+  }
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    login(email: String!, password: String!): Auth
+  }
+`;
+
+module.exports = typeDefs;
+
