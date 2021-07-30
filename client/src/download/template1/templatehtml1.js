@@ -48,7 +48,7 @@ export default function htmlTemp(data) {
                         <div class="clearfix"></div>
                 </div>
                     <div class="name-wrapper">
-                        <h1>${data.firstName} <br/>Anderson</h1><!-- YOUR NAME AND LAST NAME  -->
+                        <h1>${data.firstName} <br/>${data.lastName}</h1><!-- YOUR NAME AND LAST NAME  -->
                     </div>
                     <div class="clearfix"></div>
                     <div class="contact-info clearfix">
