@@ -16,6 +16,7 @@ const logout = (event) => {
 function theNavbar() {
     console.log(Auth.loggedIn());
     return (
+
         <Navbar>
             <Container >
                 <Nav className="me-auto">
@@ -37,6 +38,7 @@ function theNavbar() {
                 </Nav>
             </Container>
         </Navbar>
+
     );
 }
 
