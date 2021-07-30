@@ -51,8 +51,8 @@ export default class ResumeForm extends React.Component {
     return (
       <main className=" col-9 p-1">
                     <div className="card">
-                        <h5 className="text-center mb-4">Powering world-className companies</h5>
                         <form className="form-card" >
+                            <h3 className=" col-3 my-2 " >General Information</h3>
                             <div className="row justify-content-between text-left">
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">First name<span className="text-danger"> *</span></label> <input type="text" id="fname" name="firstName" placeholder="Enter your first name" onChange={this.handleChange}/> </div>
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Last name<span className="text-danger"> *</span></label> <input type="text" id="lname" name="lastName" placeholder="Enter your last name"  onChange={this.handleChange}/> </div>
@@ -62,24 +62,70 @@ export default class ResumeForm extends React.Component {
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Phone number<span className="text-danger"> *</span></label> <input type="text" id="mob" name="cell" placeholder="888-888-8888"  onChange={this.handleChange}/> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Professional Overview<span className="text-danger"> *</span></label> <input type="text" name="overview" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Professional Overview<span className="text-danger"> *</span></label> <input type="text" name="overview" placeholder="" onChange={this.handleChange}/> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaGithub size={30} style ={{color: "#3A7CA5"}}/>     Github <span className="text-danger"> *</span></label> <input type="text" name="git" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaGithub size={30} style ={{color: "#3A7CA5"}}/>     Github <span className="text-danger"> *</span></label> <input type="text" name="git" placeholder="" onChange={this.handleChange} /> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaLinkedin size={30} style ={{color: "#3A7CA5"}}/>   LinkedIn<span className="text-danger"> *</span></label> <input type="text" name="linkin" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaLinkedin size={30} style ={{color: "#3A7CA5"}}/>   LinkedIn<span className="text-danger"> *</span></label> <input type="text" name="linkin" placeholder="" onChange={this.handleChange}/> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"><FaFacebook size={30} style ={{color: "#3A7CA5"}}/>    Facebook<span className="text-danger"> *</span></label> <input type="text" name="facebook" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"><FaFacebook size={30} style ={{color: "#3A7CA5"}}/>    Facebook<span className="text-danger"> *</span></label> <input type="text" name="facebook" placeholder="" onChange={this.handleChange} /> </div>
                             </div>
                         </form>
-                        <div className="row justify-content-end">
-                             <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3>
-                        </div> 
+                    </div>
+                    <div className="card">
+                        <form className="form-card" >
+                            <h3 className=" col-3 my-2 " >Work Experience</h3>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Company Name<span className="text-danger"> *</span></label> <input type="text"  name="company1" placeholder="" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Position<span className="text-danger"> *</span></label> <input type="text"  name="position1" placeholder="" onChange={this.handleChange}/> </div>
+                            </div>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Position Description<span className="text-danger"> *</span></label> <input type="text" name="description1" placeholder="" onChange={this.handleChange} /> </div>
+                            </div>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Start date<span className="text-danger"> *</span></label> <input type="text"  name="startdate1" placeholder="Nov-2019" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">End Date<span className="text-danger"> *</span></label> <input type="text"  name="enddate1" placeholder="Oct-2020" onChange={this.handleChange}/> </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="card">
+                        <form className="form-card" >
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Company Name<span className="text-danger"> *</span></label> <input type="text"  name="company2" placeholder="" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Position<span className="text-danger"> *</span></label> <input type="text"  name="position2" placeholder="" onChange={this.handleChange}/> </div>
+                            </div>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Position Description<span className="text-danger"> *</span></label> <input type="text" name="description2" placeholder="" onChange={this.handleChange} /> </div>
+                            </div>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Start date<span className="text-danger"> *</span></label> <input type="text"  name="startdate2" placeholder="Nov-2019" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">End Date<span className="text-danger"> *</span></label> <input type="text"  name="enddate3" placeholder="Oct-2020" onChange={this.handleChange}/> </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="card">
+                        <form className="form-card" >
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Company Name<span className="text-danger"> *</span></label> <input type="text"  name="company3" placeholder="" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Position<span className="text-danger"> *</span></label> <input type="text"  name="position3" placeholder="" onChange={this.handleChange}/> </div>
+                            </div>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Position Description<span className="text-danger"> *</span></label> <input type="text" name="description3" placeholder="" onChange={this.handleChange} /> </div>
+                            </div>
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Start date<span className="text-danger"> *</span></label> <input type="text"  name="startdate3" placeholder="Nov-2019" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">End Date<span className="text-danger"> *</span></label> <input type="text"  name="enddate3" placeholder="Oct-2020" onChange={this.handleChange}/> </div>
+                            </div>
+                            <div className="row justify-content-end">
+                                <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3>
+                            </div> 
+                        </form>
                     </div>
                     <div className="row justify-content-end">
-                    <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>  
+                        <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>  
                     </div> 
       </main>
     )
