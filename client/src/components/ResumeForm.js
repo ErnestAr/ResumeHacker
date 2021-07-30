@@ -5,10 +5,11 @@ import { saveAs } from 'file-saver';
 import { Link } from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import JSZip from 'jszip';
-import fileinfo from './import';
+import htmlTemp from "../download/template1/templatehtml1"
+import cssTemp from "../download/template1/templatecss1"
+import jsTemp from '../download/template1/templatejs1';
 const zip = new JSZip();
 const fs = require('fs');
-
 
 export default class ResumeForm extends React.Component {
     state = {
@@ -25,10 +26,11 @@ export default class ResumeForm extends React.Component {
   
       // create zip file and initialize download
       createzip() {
-       
-        zip.file("Navbar.js", fileinfo());
+        zip.file("index.html", htmlTemp());
+        zip.file("index.js", jsTemp());
+        zip.file("style.css", cssTemp());
             zip.generateAsync({type:"blob"}).then(function (blob) { 
-                saveAs(blob, "template1.zip");                          
+                saveAs(blob, "Template1.zip");                          
             }, function (err) {
                 console.error(err);
             });
