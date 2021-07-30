@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, dl, dt, dd, figure, figcaption, d
 } */
 
 .bg-color {
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 
 .bg-color-secondary {
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, dl, dt, dd, figure, figcaption, d
 }
 
 .color-sc {
-  color: var(--secondary);
+  color: var(--primary);
 }
 .border-sc {
   border: 2px solid var(--secondary);
@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, dl, dt, dd, figure, figcaption, d
 
 .card {
   padding: 30px 40px;
-  margin-top: 60px;
   margin-bottom: 60px;
   border: none !important;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
@@ -98,3 +97,10 @@ button:focus {
   box-shadow: none !important;
   outline-width: 0
 }
+
+.acc {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2)
+}
+
+
+

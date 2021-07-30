@@ -65,21 +65,21 @@ export default class ResumeForm extends React.Component {
                                 <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Professional Overview<span className="text-danger"> *</span></label> <input type="text" name="overview" placeholder="" /> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaGithub size={30}/>     Github <span className="text-danger"> *</span></label> <input type="text" name="git" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaGithub size={30} style ={{color: "#3A7CA5"}}/>     Github <span className="text-danger"> *</span></label> <input type="text" name="git" placeholder="" /> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaLinkedin size={30}/>   LinkedIn<span className="text-danger"> *</span></label> <input type="text" name="linkin" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"> <FaLinkedin size={30} style ={{color: "#3A7CA5"}}/>   LinkedIn<span className="text-danger"> *</span></label> <input type="text" name="linkin" placeholder="" /> </div>
                             </div>
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"><FaFacebook size={30}/>    Facebook<span className="text-danger"> *</span></label> <input type="text" name="facebook" placeholder="" /> </div>
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"><FaFacebook size={30} style ={{color: "#3A7CA5"}}/>    Facebook<span className="text-danger"> *</span></label> <input type="text" name="facebook" placeholder="" /> </div>
                             </div>
                         </form>
                         <div className="row justify-content-end">
-                                <button type="submit" onClick={ this.createzip} className="btn-block btn-primary me-2 col-3" >Create Interactive Resume</button>  
+                             <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3>
                         </div> 
                     </div>
                     <div className="row justify-content-end">
-                        <button className="btn-block btn-primary me-5 col-3" onClick={() => this.nextPath('/dashboard')}>Close Form</button>  
+                    <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>  
                     </div> 
       </main>
     )
