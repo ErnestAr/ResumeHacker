@@ -217,9 +217,12 @@ export default class ResumeForm extends React.Component {
                     </div>
                     <div className="card">
                         <div className="form-card classes"  style={this.classes.root} >
-                            <h3 className=" col-3 my-2 " >Skills</h3>
-                                <FormControl className="mb-3" variant="filled" >
+                            <h3 className=" col-3 my-2 " > Technical Skills</h3>
+                                <p className="  my-2 " style={{color: "grey"}}> Choose level of proficiency, then add a technology ("1" - Beginer, "10"-Expert). Limit your selection to be below 8. </p>
+                                <FormControl className="mb-3" variant="filled" style={{width: "90px"}} >
+                                <InputLabel id="demo-simple-select-label" >Level</InputLabel>
                                     <Select  
+                                    
                                     labelId="demo-simple-select-filled-label"
                                     id="demo-simple-select-filled"
                                     
