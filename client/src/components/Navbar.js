@@ -5,22 +5,40 @@ import Nav from 'react-bootstrap/Nav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 
+import Auth from '../utils/auth';
+
+const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
 
 function theNavbar() {
+    console.log(Auth.loggedIn());
     return (
-        <div style={{width:'100vw'}}>
-            <Navbar className='nav-text'>
-                <Container >
-                    <Nav className="me-auto " >
+
+        <Navbar>
+            <Container >
+                <Nav className="me-auto">
+                {Auth.loggedIn() ? (
+                    <div>
                         <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
-                        <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
                         <Nav.Link className='navbar-link' href="/Dashboard"><span>Dashboard</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
+                        <button className="btn btn-lg btn-light m-2" onClick={logout}>Logout</button>
+                    </div>
+                ) : (
+                    <div>
+                        <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Dashboard</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
                         <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Login/Signup</span></Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
-        </div>
-    
+                    </div>
+                )}      
+                </Nav>
+            </Container>
+        </Navbar>
+
     );
 }
 
