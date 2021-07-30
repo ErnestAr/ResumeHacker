@@ -15,7 +15,11 @@ import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 
 
@@ -24,7 +28,11 @@ const fs = require('fs');
 
 
 
-const skills = [{
+const skills = [
+    {
+        name: '',
+    },
+    {
     name: 'JavaScript',
 }
 , {
@@ -57,12 +65,9 @@ const skills = [{
 ]
 
 const nums = [1,2,3,4,5,6,7,8,9,10]
-
+ 
 export default class ResumeForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.myRef = React.createRef();
-      }
+   
     state = {
     userInput: {
         firstName: '',
@@ -85,9 +90,9 @@ export default class ResumeForm extends React.Component {
         description2: '',
         description3: '',
     },
+    number: 0,
 
-
-    skillsInput: []
+    skills: []
 }
         
          useStyles = makeStyles((theme) => ({
@@ -104,8 +109,8 @@ export default class ResumeForm extends React.Component {
       handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
     
       handleSkillChange =  (input) => { 
-        const skills = this.state.skillsInput;
-        const inputLevel = this.myRef.current.value;
+        const skills = this.state.skills;
+        const inputLevel = this.state.number
         this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})}
       
     //   use spread operator to save to state 
@@ -126,6 +131,10 @@ export default class ResumeForm extends React.Component {
         this.props.history.push(path);
       }
 
+    //   change rating for skill
+      changeNumber = (event) => {
+          this.setState({ number: event.target.value} );
+      }
     //   Autocomplete material ui
     
 
@@ -207,14 +216,29 @@ export default class ResumeForm extends React.Component {
                         </form>
                     </div>
                     <div className="card">
-                        <form className="form-card classes"  style={this.classes.root} >
+                        <div className="form-card classes"  style={this.classes.root} >
                             <h3 className=" col-3 my-2 " >Skills</h3>
+                                <FormControl className="mb-3" variant="filled" >
+                                    <Select  
+                                    labelId="demo-simple-select-filled-label"
+                                    id="demo-simple-select-filled"
+                                    
+                                    value={this.number}
+                                    onChange={this.changeNumber}
+                                    defaultValue={this.number}
+                                    >
+                                    
+                                    {nums.map((num) => (
+                                    <MenuItem  value={num}>{num}</MenuItem>
+                                    ))}
+                                    </Select>
+                                </FormControl>
                             {/* Create list to choose skills and and rating */}
                                 <Autocomplete
                                     multiple
                                     id="tags-filled"
                                     options={skills.map((option) => option.name)}
-                                    defaultValue={[skills[3].name]}
+                                    
                                     freeSolo
                                     renderTags={(value, getTagProps) =>
                                     value.map((option, index) => (
@@ -224,21 +248,13 @@ export default class ResumeForm extends React.Component {
                                     }
                                     // onChange={this.handleChange(value)}
                                     renderInput={(params) => (
-                                    <TextField {...params} variant="filled" label="freeSolo" placeholder="Favorites"  />
+                                    <TextField {...params} variant="filled" label="" placeholder="Select or Enter Skill"  />
                                     )}
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />
                               
-                                <select ref={this.myRef}>
-                                    <option>Level of Proficiency </option>
-                                    {/* // TODO: Refactor to access `students` from our state object */}
-                                    {nums.map((num) => (
-                                    <option  value={num}>
-                                        {num}
-                                    </option>
-                                    ))}
-                                </select>
-                        </form>
+                       
+                        </div>
                     </div>
                     <div className="card">
                         <form className="form-card" >
