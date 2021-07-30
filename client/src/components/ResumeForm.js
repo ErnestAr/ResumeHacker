@@ -13,10 +13,10 @@ const fs = require('fs');
 
 export default class ResumeForm extends React.Component {
     state = {
-        FirstName: '',
-        LastName: '',
-        Cell: '',
-        Email: '',
+        firstName: '',
+        lastName: '',
+        cell: '',
+        email: '',
       }
 
       // save values to state
@@ -25,8 +25,9 @@ export default class ResumeForm extends React.Component {
 
   
       // create zip file and initialize download
-      createzip() {
-        zip.file("index.html", htmlTemp());
+      createzip = () =>{
+          console.log(this.state.FirstName);
+        zip.file("index.html", htmlTemp(this.state));
         zip.file("index.js", jsTemp());
         zip.file("style.css", cssTemp());
             zip.generateAsync({type:"blob"}).then(function (blob) { 
@@ -47,12 +48,12 @@ export default class ResumeForm extends React.Component {
                         <h5 className="text-center mb-4">Powering world-className companies</h5>
                         <form className="form-card" >
                             <div className="row justify-content-between text-left">
-                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">First name<span className="text-danger"> *</span></label> <input type="text" id="fname" name="fname" placeholder="Enter your first name" onChange={this.handleChange}/> </div>
-                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Last name<span className="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Enter your last name"  onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">First name<span className="text-danger"> *</span></label> <input type="text" id="fname" name="firstName" placeholder="Enter your first name" onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Last name<span className="text-danger"> *</span></label> <input type="text" id="lname" name="lastName" placeholder="Enter your last name"  onChange={this.handleChange}/> </div>
                             </div>
                             <div className="row justify-content-between text-left">
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Email<span className="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="" onChange={this.handleChange}/> </div>
-                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Phone number<span className="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder=""  onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Phone number<span className="text-danger"> *</span></label> <input type="text" id="mob" name="cell" placeholder=""  onChange={this.handleChange}/> </div>
                             </div>
                             {/* <div className="row justify-content-between text-left">
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Job title<span className="text-danger"> *</span></label> <input type="text" id="job" name="job" placeholder="" onBlur="validate(5)"/> </div>
@@ -60,7 +61,6 @@ export default class ResumeForm extends React.Component {
                             <div className="row justify-content-between text-left">
                                 <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">What would you be using Flinks for?<span className="text-danger"> *</span></label> <input type="text" id="ans" name="ans" placeholder="" onBlur="validate(6)"/> </div>
                             </div>*/}
-                          
                         </form>
                         <div className="row justify-content-end">
                                 <button type="submit" onClick={ this.createzip} className="btn-block btn-primary me-2 col-3" >Create Interactive Resume</button>  
