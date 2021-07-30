@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef} from 'react'
 import "../pages/Dashboard/dashboard.css"
 import axios from 'axios';
 import { saveAs } from 'file-saver';
@@ -19,9 +19,9 @@ import TextField from '@material-ui/core/TextField';
 
 
 
-
 const zip = new JSZip();
 const fs = require('fs');
+
 
 
 const skills = [{
@@ -66,9 +66,13 @@ const skills = [{
 },
 ]
 
-
+const nums = [1,2,3,4,5,6,7,8,9,10]
 
 export default class ResumeForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+      }
     state = {
     userInput: {
         firstName: '',
@@ -93,8 +97,7 @@ export default class ResumeForm extends React.Component {
     },
 
 
-    value: [{
-    }]
+    skillInput: []
 }
         
          useStyles = makeStyles((theme) => ({
@@ -105,19 +108,16 @@ export default class ResumeForm extends React.Component {
             },
             },
         }));
-
-         classes = this.useStyles;
-
+        
+        classes = this.useStyles;
       // save values to userInput
       handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
-      handleSkillChange = (input) => {this.setState({...this.state.value, input})}
-    //   {this.setState({...this.state.userInput, value: input})}
-    //   {this.setState({...this.state.values, value: input})}
+    
+      handleSkillChange =  (skillInput) => { 
+        const inputLevel = this.myRef.current.value;
+        this.setState({...this.state.skillInput, skillInput: {name: skillInput, level: inputLevel}})}
+      
     //   use spread operator to save to state 
-
-     
-
-
       // create zip file and initialize download
       createzip = () =>{
         console.log(this.userInput.FirstName);
@@ -229,13 +229,25 @@ export default class ResumeForm extends React.Component {
                                     value.map((option, index) => (
                                         <Chip variant="outlined" label={option} {...getTagProps({ index })}  />
                                     ))
+                                    
                                     }
+                                    // onChange={this.handleChange(value)}
                                     renderInput={(params) => (
-                                    <TextField {...params} variant="filled" label="freeSolo" placeholder="Favorites" onChange={this.handleSkillChange} />
+                                    <TextField {...params} variant="filled" label="freeSolo" placeholder="Favorites"  />
                                     )}
+                                    onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />
+                              
+                                <select ref={this.myRef}>
+                                    <option>Level of Proficiency </option>
+                                    {/* // TODO: Refactor to access `students` from our state object */}
+                                    {nums.map((num) => (
+                                    <option  value={num}>
+                                        {num}
+                                    </option>
+                                    ))}
+                                </select>
                         </form>
-                      
                     </div>
                     <div className="card">
                         <form className="form-card" >
