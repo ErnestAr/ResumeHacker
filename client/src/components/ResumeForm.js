@@ -11,29 +11,117 @@ import jsTemp from '../download/template1/templatejs1';
 import {FaGithub} from 'react-icons/fa'
 import {FaFacebook} from 'react-icons/fa'
 import {FaLinkedin} from 'react-icons/fa'
+import Chip from '@material-ui/core/Chip';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+
+
+
 
 const zip = new JSZip();
 const fs = require('fs');
 
 
+const skills = [{
+    name: 'JavaScript',
+    level: 'beginner',
+}
+, {
+    name: 'HTML',
+    level: 'beginner',
+},
+{
+    name: 'CSS',
+    level: 'beginner',
+},
+{
+    name: 'JQuery',
+    level: 'beginner',
+},
+{
+    name: 'React',
+    level: 'beginner',
+},
+{
+    name: 'Node.js',
+    level: 'beginner',
+},
+{
+    name: 'MongoDB',
+    level: 'beginner',
+},
+{
+    name: 'Express',
+    level: 'beginner',
+},
+{
+    name: 'Angular',
+    level: 'beginner',
+},
+{
+    name: 'Vue.js',
+    level: 'beginner',
+},
+]
+
+
 
 export default class ResumeForm extends React.Component {
     state = {
+    userInput: {
         firstName: '',
         lastName: '',
         cell: '',
         email: '',
-      }
+        github: '',
+        linkedin: '',
+        facebook: '',
+        company1: '',
+        company2: '',
+        company3: '',
+        startdate1: '',
+        startdate2: '',
+        startdate3: '',
+        enddate1: '',
+        enddate2: '',
+        enddate3: '',
+        description1: '',
+        description2: '',
+        description3: '',
+    },
 
-      // save values to state
-      handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
+
+    value: [{
+    }]
+}
+        
+         useStyles = makeStyles((theme) => ({
+            root: {
+            width: 500,
+            '& > * + *': {
+                marginTop: theme.spacing(3),
+            },
+            },
+        }));
+
+         classes = this.useStyles;
+
+      // save values to userInput
+      handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
+      handleSkillChange = (input) => {this.setState({...this.state.value, input})}
+    //   {this.setState({...this.state.userInput, value: input})}
+    //   {this.setState({...this.state.values, value: input})}
+    //   use spread operator to save to state 
+
+     
 
 
-  
       // create zip file and initialize download
       createzip = () =>{
-          console.log(this.state.FirstName);
-        zip.file("index.html", htmlTemp(this.state));
+        console.log(this.userInput.FirstName);
+        zip.file("index.html", htmlTemp(this.userInput));
         zip.file("index.js", jsTemp());
         zip.file("style.css", cssTemp());
             zip.generateAsync({type:"blob"}).then(function (blob) { 
@@ -46,6 +134,9 @@ export default class ResumeForm extends React.Component {
       nextPath(path) {
         this.props.history.push(path);
       }
+
+    //   Autocomplete material ui
+    
 
       render() {
     return (
@@ -125,10 +216,26 @@ export default class ResumeForm extends React.Component {
                         </form>
                     </div>
                     <div className="card">
-                        <form className="form-card" >
+                        <form className="form-card classes"  style={this.classes.root} >
                             <h3 className=" col-3 my-2 " >Skills</h3>
                             {/* Create list to choose skills and and rating */}
+                                <Autocomplete
+                                    multiple
+                                    id="tags-filled"
+                                    options={skills.map((option) => option.name)}
+                                    defaultValue={[skills[3].name]}
+                                    freeSolo
+                                    renderTags={(value, getTagProps) =>
+                                    value.map((option, index) => (
+                                        <Chip variant="outlined" label={option} {...getTagProps({ index })}  />
+                                    ))
+                                    }
+                                    renderInput={(params) => (
+                                    <TextField {...params} variant="filled" label="freeSolo" placeholder="Favorites" onChange={this.handleSkillChange} />
+                                    )}
+                                />
                         </form>
+                      
                     </div>
                     <div className="card">
                         <form className="form-card" >
