@@ -26,43 +26,33 @@ const fs = require('fs');
 
 const skills = [{
     name: 'JavaScript',
-    level: 'beginner',
 }
 , {
     name: 'HTML',
-    level: 'beginner',
 },
 {
     name: 'CSS',
-    level: 'beginner',
 },
 {
     name: 'JQuery',
-    level: 'beginner',
 },
 {
     name: 'React',
-    level: 'beginner',
 },
 {
     name: 'Node.js',
-    level: 'beginner',
 },
 {
     name: 'MongoDB',
-    level: 'beginner',
 },
 {
     name: 'Express',
-    level: 'beginner',
 },
 {
     name: 'Angular',
-    level: 'beginner',
 },
 {
     name: 'Vue.js',
-    level: 'beginner',
 },
 ]
 
@@ -97,7 +87,7 @@ export default class ResumeForm extends React.Component {
     },
 
 
-    skillInput: []
+    skillsInput: []
 }
         
          useStyles = makeStyles((theme) => ({
@@ -113,13 +103,14 @@ export default class ResumeForm extends React.Component {
       // save values to userInput
       handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
     
-      handleSkillChange =  (skillInput) => { 
+      handleSkillChange =  (input) => { 
+        const skills = this.state.skillsInput;
         const inputLevel = this.myRef.current.value;
-        this.setState({...this.state.skillInput, skillInput: {name: skillInput, level: inputLevel}})}
+        this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})}
       
     //   use spread operator to save to state 
       // create zip file and initialize download
-      createzip = () =>{
+    createzip = () =>{
         console.log(this.userInput.FirstName);
         zip.file("index.html", htmlTemp(this.userInput));
         zip.file("index.js", jsTemp());
