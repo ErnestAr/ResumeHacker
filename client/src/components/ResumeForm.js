@@ -124,6 +124,22 @@ export default class ResumeForm extends React.Component {
                             </div> 
                         </form>
                     </div>
+                    <div className="card">
+                        <form className="form-card" >
+                            <h3 className=" col-3 my-2 " >Skills</h3>
+                            {/* Create list to choose skills and and rating */}
+                        </form>
+                    </div>
+                    <div className="card">
+                        <form className="form-card" >
+                            <h3 className=" col-4 my-2 " >Non-work related activities</h3>
+
+                            <div className="row justify-content-between text-left">
+                                <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Hobbies <span className="text-danger"> *</span></label> <input type="text" name="hobbies" placeholder="Skiing, Hiking, Martial Arts, etc. " onChange={this.handleChange} /> </div>
+                            </div>
+                      
+                        </form>
+                    </div>
                     <div className="row justify-content-end">
                         <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>  
                     </div> 
