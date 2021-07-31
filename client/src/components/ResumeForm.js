@@ -69,7 +69,7 @@ const nums = [1,2,3,4,5,6,7,8,9,10]
 export default class ResumeForm extends React.Component {
    
     state = {
-    userInput: {
+    
         firstName: '',
         lastName: '',
         cell: '',
@@ -89,10 +89,10 @@ export default class ResumeForm extends React.Component {
         description1: '',
         description2: '',
         description3: '',
-    },
-    number: 0,
+        hobbies: '',
+        number: 0,
 
-    skills: []
+        skills: []
 }
         
          useStyles = makeStyles((theme) => ({
@@ -108,6 +108,7 @@ export default class ResumeForm extends React.Component {
       // save values to userInput
       handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
     
+    //   create skill key value pairs
       handleSkillChange =  (input) => { 
         const skills = this.state.skills;
         const inputLevel = this.state.number
@@ -117,8 +118,8 @@ export default class ResumeForm extends React.Component {
       // create zip file and initialize download
     createzip = () =>{
         console.log(this.userInput.FirstName);
-        zip.file("index.html", htmlTemp(this.userInput));
-        zip.file("index.js", jsTemp());
+        zip.file("index.html", htmlTemp(this.state));
+        zip.file("index.js", jsTemp(this.state.skills));
         zip.file("style.css", cssTemp());
             zip.generateAsync({type:"blob"}).then(function (blob) { 
                 saveAs(blob, "Template1.zip");                          
@@ -135,8 +136,6 @@ export default class ResumeForm extends React.Component {
       changeNumber = (event) => {
           this.setState({ number: event.target.value} );
       }
-    //   Autocomplete material ui
-    
 
       render() {
     return (
@@ -210,9 +209,7 @@ export default class ResumeForm extends React.Component {
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Start date<span className="text-danger"> *</span></label> <input type="text"  name="startdate3" placeholder="Nov-2019" onChange={this.handleChange}/> </div>
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">End Date<span className="text-danger"> *</span></label> <input type="text"  name="enddate3" placeholder="Oct-2020" onChange={this.handleChange}/> </div>
                             </div>
-                            <div className="row justify-content-end">
-                                <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3>
-                            </div> 
+                           
                         </form>
                     </div>
                     <div className="card">
@@ -266,7 +263,9 @@ export default class ResumeForm extends React.Component {
                             <div className="row justify-content-between text-left">
                                 <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Hobbies <span className="text-danger"> *</span></label> <input type="text" name="hobbies" placeholder="Skiing, Hiking, Martial Arts, etc. " onChange={this.handleChange} /> </div>
                             </div>
-                      
+                            <div className="row justify-content-end">
+                                <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3>
+                            </div>             
                         </form>
                     </div>
                     <div className="row justify-content-end">

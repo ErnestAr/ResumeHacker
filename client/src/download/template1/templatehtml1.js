@@ -66,7 +66,7 @@ export default function htmlTemp(data) {
                         </ul>
                     </div>
                     <div class="contact-presentation"> <!-- YOUR PRESENTATION RESUME  -->
-                        <p><span class="bold">Lorem</span> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus. </p>
+                        <p><span class="bold">Professional Overview</span> <br> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus. </p>
                     </div>
                     <div class="contact-social clearfix">
                         <ul class="list-titles">

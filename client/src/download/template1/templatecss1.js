@@ -1,4 +1,22 @@
-export default function cssTemp() {
+export default function cssTemp(data) {
+    // loop through  value from the data object
+    const itRates = (data) => {
+        let cssValue = '';
+        let count = 0;
+    for (let key in data) {
+        let value = data[key];
+        let newCss = 
+        ` @keyframes skill_${count} {
+            from {
+                width: 0%;
+        }
+            to {
+                width: ${value}0%;
+        }`
+        cssValue += newCss;
+        count++;
+        }
+    return cssValue;}
     const cssTempst = `
                         @import url(https://fonts.googleapis.com/css?family=Varela+Round);
                         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
@@ -327,63 +345,8 @@ export default function cssTemp() {
                             width: 70%;
                             animation: skill_6 0.6s ease;
                         }
-                        @keyframes skill_1 {
-                            from {
-                                width: 0%;
+                        ${itRates(data)}
                         }
-                            to {
-                                width: 80%;
-                        }
-                        }
-                        @keyframes skill_2 {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: 90%;
-                        }
-                        }
-                        @keyframes skill_3 {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: 50%;
-                        }
-                        }
-                        @keyframes skill_4 {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: 60%;
-                        }
-                        }
-                        @keyframes skill_5 {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: 70%;
-                        }
-                        }
-                        @keyframes skill_6 {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: 70%;
-                        }
-                        }
-                        @keyframes skill_7 {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: 70%;
-                        }
-                        }
-
         `;
         return cssTempst
 };
