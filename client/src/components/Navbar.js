@@ -19,16 +19,16 @@ function theNavbar() {
 
         <Navbar>
             <Container >
-                <Nav className="me-auto">
+                <Nav className="me-auto d-flex justify-content-end">
                 {Auth.loggedIn() ? (
-                    <div>
+                    <div className='d-flex flex-row'>
                         <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
                         <Nav.Link className='navbar-link' href="/Dashboard"><span>Dashboard</span></Nav.Link>
                         <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
                         <button className="btn btn-lg btn-light m-2" onClick={logout}>Logout</button>
                     </div>
                 ) : (
-                    <div>
+                    <div className='d-flex flex-row'>
                         <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
                         <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Dashboard</span></Nav.Link>
                         <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
