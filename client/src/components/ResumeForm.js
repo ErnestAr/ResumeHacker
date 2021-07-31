@@ -117,10 +117,10 @@ export default class ResumeForm extends React.Component {
     //   use spread operator to save to state 
       // create zip file and initialize download
     createzip = () =>{
-        console.log(this.userInput.FirstName);
+        
         zip.file("index.html", htmlTemp(this.state));
-        zip.file("index.js", jsTemp(this.state.skills));
-        zip.file("style.css", cssTemp());
+        zip.file("index.js", jsTemp());
+        zip.file("style.css", cssTemp(this.state.skills));
             zip.generateAsync({type:"blob"}).then(function (blob) { 
                 saveAs(blob, "Template1.zip");                          
             }, function (err) {

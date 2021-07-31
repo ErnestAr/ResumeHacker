@@ -2,17 +2,19 @@ export default function cssTemp(data) {
     // loop through  value from the data object
     const itRates = (data) => {
         let cssValue = '';
-        let count = 0;
+        let count = 1;
     for (let key in data) {
         let value = data[key];
         let newCss = 
-        ` @keyframes skill_${count} {
-            from {
-                width: 0%;
-        }
-            to {
-                width: ${value}0%;
-        }`
+                        ` @keyframes skill_${count} {
+                            from {
+                                width: 0%;
+                        }
+                            to {
+                                width: ${value}0%;
+                        }
+                        }`
+    
         cssValue += newCss;
         count++;
         }
@@ -346,7 +348,7 @@ export default function cssTemp(data) {
                             animation: skill_6 0.6s ease;
                         }
                         ${itRates(data)}
-                        }
+                        
         `;
         return cssTempst
 };
