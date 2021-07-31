@@ -239,7 +239,7 @@ export default class ResumeForm extends React.Component {
                     <div className="card">
                         <div className="form-card classes"  style={this.classes.root} >
                             <h3 className=" col-3 my-2 " > Technical Skills</h3>
-                                <p className="  my-2 " style={{color: "grey"}}> Choose level of proficiency, then add a technology ("1" - Beginer, "10"-Expert). Limit your selection to be below 8. </p>
+                                <p className="  my-2 " style={{color: "grey"}}> Choose level of proficiency, then add a technology ("1" - Beginner, "10"-Expert). </p>
                                 <FormControl className="mb-3" variant="filled" style={{width: "90px"}} >
                                 <InputLabel id="demo-simple-select-label" >Level</InputLabel>
                                     <Select  
@@ -259,6 +259,7 @@ export default class ResumeForm extends React.Component {
                                 </FormControl>
                             {/* Create list to choose skills and and rating */}
                                 <Autocomplete
+                                    
                                     multiple
                                     id="tags-filled"
                                     options={skills.map((option) => option.name)}
@@ -266,13 +267,13 @@ export default class ResumeForm extends React.Component {
                                     freeSolo
                                     renderTags={(value, getTagProps) =>
                                     value.map((option, index) => (
-                                        <Chip variant="outlined" label={option} {...getTagProps({ index })}  />
+                                        <Chip  variant="outlined" label={option} {...getTagProps({ index })}  />
                                     ))
                                     
                                     }
                                     // onChange={this.handleChange(value)}
                                     renderInput={(params) => (
-                                    <TextField {...params} variant="filled" label="" placeholder="Select or Enter Skill"  />
+                                    <TextField {...params} variant="filled" label="Skills" placeholder="Select or Enter Technology"  />
                                     )}
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />

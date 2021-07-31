@@ -74,7 +74,7 @@ textarea:focus {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #00BCD4;
+  
   outline-width: 0;
   font-weight: 400
 }
