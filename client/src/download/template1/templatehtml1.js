@@ -18,7 +18,7 @@ export default function htmlTemp(data) {
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Template</title>
+                <title>${data.firstName}  ${data.lastName} Resume</title>
                 <link rel="stylesheet" href="style.css">
             </head>
             <body>
@@ -28,9 +28,7 @@ export default function htmlTemp(data) {
                         <div class="container">
                             <div class="picture-resume-wrapper">
                         <div class="picture-resume">
-                        <span><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" /></span>
-                        
-                
+                        <span><img src="${data.files[0].name}" alt="" /></span>
                 <defs>
                     <filter id="goo">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
@@ -71,25 +69,25 @@ export default function htmlTemp(data) {
                             <li>Home</li>
                         </ul>
                         <ul class="list-content ">
-                            <li>+34 123 456 789</li> <!-- YOUR PHONE NUMBER  -->
-                            <li>j.anderson@gmail.com</li> <!-- YOUR EMAIL -->
-                            <li><a href="#">janderson.com</a></li> <!-- YOUR WEBSITE  -->
-                            <li>Los Angeles, CA</li> <!-- YOUR STATE AND COUNTRY  -->
+                            <li>${data.cell}</li> <!-- YOUR PHONE NUMBER  -->
+                            <li>${data.email}</li> <!-- YOUR EMAIL -->
+                            <li><a href="${data.website}">${data.website}</a></li> <!-- YOUR WEBSITE  -->
+                            <li>${data.address}</li> 
                         </ul>
                     </div>
-                    <div class="contact-presentation"> <!-- YOUR PRESENTATION RESUME  -->
-                        <p><span class="bold">Professional Overview</span> <br> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus. </p>
+                    <div class="contact-presentation"> 
+                        <p><span class="bold">Professional Overview</span> <br> ${data.overview} </p>
                     </div>
                     <div class="contact-social clearfix">
                         <ul class="list-titles">
-                            <li>Twitter</li>
-                            <li>Dribbble</li>
-                            <li>Codepen</li>
+                            <li>GitHub</li>
+                            <li>LinkedIn</li>
+                            <li>Facebook</li>
                         </ul>
-                        <ul class="list-content"> <!-- REMEMBER TO PUT THE URL ON THE HREF TAG  -->
-                            <li><a href="">@janderson</a></li> <!-- YOUR TWITTER USER  -->
-                            <li><a href="">janderson</a></li> <!-- YOUR DRIBBBLE USER  -->
-                            <li><a href="">janderson</a></li> <!-- YOUR BEHANCE USER  -->
+                        <ul class="list-content"> 
+                            <li><a href="${data.github}">${data.github}</a></li>
+                            <li><a href="${data.linkedin}">${data.linkedin}</a></li>
+                            <li><a href="${data.facebook}">${data.facebook}</a></li> 
                         </ul>
                     </div>
                         </div>
@@ -101,45 +99,45 @@ export default function htmlTemp(data) {
                     
                     <div class="experience-wrapper">
                         <div class="company-wrapper clearfix">
-                            <div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-                        <div class="time">Nov 2012 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+                            <div class="experience-title">${data.company1}</div> 
+                        <div class="time">${data.startdate1} - ${data.enddate1}</div> 
                         </div>
                         
                         <div class="job-wrapper clearfix">
-                            <div class="experience-title">Front End Developer </div> <!-- JOB TITLE  -->
+                            <div class="experience-title">${data.position1} </div> 
                         <div class="company-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
+                            <p>${data.description1}</p>
                         </div>
                         </div>
                         
                         <div class="company-wrapper clearfix">
-                            <div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-                        <div class="time">Nov 2010 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+                            <div class="experience-title">${data.company2}</div> 
+                        <div class="time">${data.startdate2} - ${data.enddate2}</div>
                         </div>
                         
                         <div class="job-wrapper clearfix">
-                            <div class="experience-title">Freelance, Web Designer / Web Developer</div> <!-- JOB TITLE  -->
+                            <div class="experience-title">${data.position2}</div> 
                         <div class="company-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
+                            <p>${data.description2}</p> 
                         </div>
                         </div>
                         
                         <div class="company-wrapper clearfix">
-                            <div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-                        <div class="time">Nov 2009 - Nov 2010</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+                            <div class="experience-title">${data.company3}</div> 
+                        <div class="time">${data.startdate3} - ${data.enddate3}</div> 
                         </div> 
                         
                         <div class="job-wrapper clearfix">
-                            <div class="experience-title">Web Designer </div> <!-- JOB TITLE  -->
+                            <div class="experience-title">${data.position3}</div> 
                         <div class="company-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>   <!-- JOB DESCRIPTION  -->
+                            <p>${data.description3}</p>  
                         </div>
                         </div>
                         
                     </div><!--Skill experience-->
                     
                     <div class="section-wrapper clearfix">
-                        <h3 class="section-title">Skills</h3>  <!-- YOUR SET OF SKILLS  -->
+                        <h3 class="section-title">Skills</h3> 
                             <ul>
                                ${addSkill(data.skills)}
                             
@@ -148,10 +146,9 @@ export default function htmlTemp(data) {
                     </div>
                     
                     <div class="section-wrapper clearfix">
-                        <h3 class="section-title">Hobbies</h3>  <!-- DESCRIPTION OF YOUR HOBBIES -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>
-                        
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p> 
+                        <h3 class="section-title">Hobbies</h3>  
+                        <p>${data.hobbies}</p>
+
                     </div>
                     
                     </div>

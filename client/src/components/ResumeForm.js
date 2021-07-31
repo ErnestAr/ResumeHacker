@@ -77,6 +77,9 @@ export default class ResumeForm extends React.Component {
         lastName: '',
         cell: '',
         email: '',
+        address:    '',
+        website: '',
+        overview: '',
         github: '',
         linkedin: '',
         facebook: '',
@@ -92,10 +95,12 @@ export default class ResumeForm extends React.Component {
         description1: '',
         description2: '',
         description3: '',
+        position1: '',
+        position2: '',
+        position3: '',
         hobbies: '',
         number: 0,
         files: [],
-
         skills: []
 }
         
@@ -117,7 +122,6 @@ export default class ResumeForm extends React.Component {
         const skills = this.state.skills;
         const inputLevel = this.state.number
         this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})}
-      
     //   use spread operator to save to state 
       // create zip file and initialize download
     createzip = () =>{
@@ -160,6 +164,8 @@ export default class ResumeForm extends React.Component {
                             <div className="row justify-content-between text-left">
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">First name<span className="text-danger"> *</span></label> <input type="text" id="fname" name="firstName" placeholder="Enter your first name" onChange={this.handleChange}/> </div>
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Last name<span className="text-danger"> *</span></label> <input type="text" id="lname" name="lastName" placeholder="Enter your last name"  onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Address(Country, state)<span className="text-danger"> *</span></label> <input type="text" id="lname" name="address" placeholder="Canada, Ontario"  onChange={this.handleChange}/> </div>
+                                <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Website/Portfolio link<span className="text-danger"> *</span></label> <input type="text" id="lname" name="website" placeholder="yourportfolio.com"  onChange={this.handleChange}/> </div>
                             </div>
                             <div className="row justify-content-between text-left">
                                 <div className="form-group col-sm-6 flex-column d-flex"> <label className="form-control-label px-3">Email<span className="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="example@gmail.com" onChange={this.handleChange}/> </div>
