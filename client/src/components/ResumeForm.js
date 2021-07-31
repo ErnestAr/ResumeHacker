@@ -104,7 +104,7 @@ export default class ResumeForm extends React.Component {
         skills: []
 }
         
-         useStyles = makeStyles((theme) => ({
+        useStyles = makeStyles((theme) => ({
             root: {
             width: 500,
             '& > * + *': {
@@ -276,8 +276,6 @@ export default class ResumeForm extends React.Component {
                                     )}
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />
-                              
-                       
                         </div>
                     </div>
                     <div className="card">
