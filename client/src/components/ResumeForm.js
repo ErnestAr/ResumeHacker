@@ -258,6 +258,8 @@ export default class ResumeForm extends React.Component {
                                     </Select>
                                 </FormControl>
                             {/* Create list to choose skills and and rating */}
+                            <p className="  my-2 " style={{color: "grey"}}> Select technology from the list or enter your own.  </p>
+
                                 <Autocomplete
                                     
                                     multiple
@@ -273,7 +275,7 @@ export default class ResumeForm extends React.Component {
                                     }
                                     // onChange={this.handleChange(value)}
                                     renderInput={(params) => (
-                                    <TextField {...params} variant="filled" label="Skills" placeholder="Select or Enter Technology"  />
+                                    <TextField {...params} variant="filled" label="Skills" placeholder="MongoDB, React, Vue etc."  />
                                     )}
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />
