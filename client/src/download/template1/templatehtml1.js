@@ -2,6 +2,8 @@ export default function htmlTemp(data) {
         const addSkill = (data) => {
             let skillLi = '';
         for (let key in data) {
+            // if undifined continue loop
+            if (data[key] === undefined) continue;
             let newSkill = 
                             `
                             <li class="skill-percentage">${key}</li>
@@ -139,7 +141,7 @@ export default function htmlTemp(data) {
                     <div class="section-wrapper clearfix">
                         <h3 class="section-title">Skills</h3>  <!-- YOUR SET OF SKILLS  -->
                             <ul>
-                               ${addSkill(data)}
+                               ${addSkill(data.skills)}
                             
                             </ul>
                         
