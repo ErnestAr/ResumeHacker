@@ -7,7 +7,6 @@ import {useHistory} from 'react-router-dom'
 import JSZip from 'jszip';
 import htmlTemp from "../download/template1/templatehtml1"
 import cssTemp from "../download/template1/templatecss1"
-import jsTemp from '../download/template1/templatejs1';
 import {FaGithub} from 'react-icons/fa'
 import {FaFacebook} from 'react-icons/fa'
 import {FaLinkedin} from 'react-icons/fa'
@@ -20,6 +19,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import {DropzoneArea} from 'material-ui-dropzone'
 
 
 
@@ -65,9 +65,12 @@ const skills = [
 ]
 
 const nums = [1,2,3,4,5,6,7,8,9,10]
- 
+
+
+
 export default class ResumeForm extends React.Component {
-   
+
+
     state = {
     
         firstName: '',
@@ -91,6 +94,7 @@ export default class ResumeForm extends React.Component {
         description3: '',
         hobbies: '',
         number: 0,
+        files: [],
 
         skills: []
 }
@@ -119,8 +123,11 @@ export default class ResumeForm extends React.Component {
     createzip = () =>{
         
         zip.file("index.html", htmlTemp(this.state));
-        zip.file("index.js", jsTemp());
         zip.file("style.css", cssTemp(this.state.skills));
+        // add image from files state to zip
+        this.state.files.forEach((file) => {
+            zip.file(file.name, file.data);
+        });
             zip.generateAsync({type:"blob"}).then(function (blob) { 
                 saveAs(blob, "Template1.zip");                          
             }, function (err) {
@@ -135,6 +142,13 @@ export default class ResumeForm extends React.Component {
     //   change rating for skill
       changeNumber = (event) => {
           this.setState({ number: event.target.value} );
+      }
+
+    // dropdondown handle Change
+    handleDrop(files){
+        this.setState({
+          files: files
+        });
       }
 
       render() {
@@ -164,6 +178,10 @@ export default class ResumeForm extends React.Component {
                                 <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3"><FaFacebook size={30} style ={{color: "#3A7CA5"}}/>    Facebook<span className="text-danger"> *</span></label> <input type="text" name="facebook" placeholder="" onChange={this.handleChange} /> </div>
                             </div>
                         </form>
+                        <label className="form-control-label px-3 my-2">Upload photo or avatar image<span className="text-danger"> *</span></label> 
+                        <DropzoneArea
+                            onChange={this.handleDrop.bind(this)}
+                            />
                     </div>
                     <div className="card">
                         <form className="form-card" >

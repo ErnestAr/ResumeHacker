@@ -14,7 +14,7 @@ export default function htmlTemp(data) {
         const htmlTempst = `
         <!DOCTYPE html>
             <html lang="en">
-            <head>
+            <head>r
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@ export default function htmlTemp(data) {
                             <div class="picture-resume-wrapper">
                         <div class="picture-resume">
                         <span><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" /></span>
-                        <svg version="1.1" viewBox="0 0 350 350">
+                        
                 
                 <defs>
                     <filter id="goo">
