@@ -1,4 +1,14 @@
 export default function htmlTemp(data) {
+        const addSkill = (data) => {
+            let skillLi = '';
+        for (let key in data) {
+            let newSkill = 
+                            `
+                            <li class="skill-percentage">${key}</li>
+                            `
+            skillLi += newSkill;
+            }
+        return skillLi;}
         const htmlTempst = `
         <!DOCTYPE html>
             <html lang="en">
@@ -129,12 +139,7 @@ export default function htmlTemp(data) {
                     <div class="section-wrapper clearfix">
                         <h3 class="section-title">Skills</h3>  <!-- YOUR SET OF SKILLS  -->
                             <ul>
-                                <li class="skill-percentage">HTML / HTML5</li>
-                                <li class="skill-percentage">CSS / CSS3 / SASS / LESS</li>
-                                <li class="skill-percentage">Javascript</li>
-                                <li class="skill-percentage">Jquery</li>
-                                <li class="skill-percentage">Wordpress</li>
-                                <li class="skill-percentage">Photoshop</li>
+                               ${addSkill(data)}
                             
                             </ul>
                         

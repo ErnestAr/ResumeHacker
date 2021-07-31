@@ -14,7 +14,6 @@ export default function cssTemp(data) {
                                 width: ${value}0%;
                         }
                         }`
-    
         cssValue += newCss;
         count++;
         }
