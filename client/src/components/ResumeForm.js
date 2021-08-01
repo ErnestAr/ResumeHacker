@@ -26,6 +26,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 
 
 
@@ -108,11 +110,17 @@ export default class ResumeForm extends React.Component {
         number: 0,
         files: [],
         skills: [],
-       
+        dialogValue: {skill: '', level: ''},
+        opendialog: false,
+        currentSkill: '',
 }
         
         // handle dialog close
     
+    handleClose(){
+        this.setState({dialogValue: {skill: '', level: ''}})
+        this.setState({opendialog: false})
+    }
 
         // style for the form
     useStyles = makeStyles((theme) => ({
@@ -131,6 +139,7 @@ export default class ResumeForm extends React.Component {
     
     //   create skill key value pairs
     handleSkillChange =  (input) => { 
+        this.setState({opendialog: true})
         const skills = this.state.skills;
         const inputLevel = this.state.number
         this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})
@@ -276,7 +285,6 @@ export default class ResumeForm extends React.Component {
                             <p className="  my-2 " style={{color: "grey"}}> Select technology from the list or enter your own.  </p>
                             
                                 <Autocomplete
-                                    
                                     multiple
                                     id="tags-filled"
                                     options={skills.map((option) => option.name)}
@@ -291,9 +299,15 @@ export default class ResumeForm extends React.Component {
                                     <TextField {...params} variant="filled" label="Skills" placeholder="MongoDB, React, Vue etc."  />
                                     )}
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
-                                      
                                 />
-                              
+                                <Dialog onClose={this.handleClose} open={this.state.opendialog}>
+                                 <DialogTitle id="simple-dialog-title">dialog</DialogTitle>
+                                    <List>
+                                            <ListItem autoFocus button onClick={this.handleClose}>
+                                                close
+                                            </ListItem>
+                                    </List>
+                                </Dialog>
                         </div>
                     </div>
                     <div className="card">
