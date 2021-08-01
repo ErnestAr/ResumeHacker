@@ -1,6 +1,9 @@
 import React from 'react'
 import {VscAccount} from "react-icons/vsc"
 import "../pages/Dashboard/dashboard.css"
+import UpdateUser from "./UpdateUser.js"
+import DeleteUser from "./DeleteUser.js"
+
 
 export default function UserInterface() {
     return (
@@ -15,6 +18,8 @@ export default function UserInterface() {
                 <h3 className="text-center bg-color rounded btn-acc border-sc">Update Information</h3>
                 <h3 className="text-center bg-color rounded btn-acc border-sc">Delete Sccount</h3>
             </div>
+            <UpdateUser/>
+            <DeleteUser/>
         </aside>
     )
 }
