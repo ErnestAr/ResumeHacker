@@ -20,6 +20,12 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {DropzoneArea} from 'material-ui-dropzone'
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogActions from '@material-ui/core/DialogActions';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -101,10 +107,19 @@ export default class ResumeForm extends React.Component {
         hobbies: '',
         number: 0,
         files: [],
-        skills: []
+        skills: [],
+        dialogValue: {skill: '', level: ''},
+        opendialog: false,
 }
         
-        useStyles = makeStyles((theme) => ({
+        // handle dialog close
+    handleClose(){
+        this.setState({dialogValue: {skill: '', level: ''}})
+        this.setState({opendialog: false})
+    }
+
+        // style for the form
+    useStyles = makeStyles((theme) => ({
             root: {
             width: 500,
             '& > * + *': {
@@ -113,16 +128,20 @@ export default class ResumeForm extends React.Component {
             },
         }));
         
-        classes = this.useStyles;
+    classes = this.useStyles;
+
       // save values to userInput
-      handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
+    handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
     
     //   create skill key value pairs
-      handleSkillChange =  (input) => { 
+    handleSkillChange =  (input) => { 
         const skills = this.state.skills;
         const inputLevel = this.state.number
-        this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})}
-    //   use spread operator to save to state 
+        this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})
+        this.handleClose()
+    }
+   
+
       // create zip file and initialize download
     createzip = () =>{
         
@@ -259,26 +278,80 @@ export default class ResumeForm extends React.Component {
                                 </FormControl>
                             {/* Create list to choose skills and and rating */}
                             <p className="  my-2 " style={{color: "grey"}}> Select technology from the list or enter your own.  </p>
-
+                            <React.Fragment>
                                 <Autocomplete
-                                    
+                                    value={this.state.}
                                     multiple
                                     id="tags-filled"
                                     options={skills.map((option) => option.name)}
-                                    
                                     freeSolo
                                     renderTags={(value, getTagProps) =>
                                     value.map((option, index) => (
                                         <Chip  variant="outlined" label={option} {...getTagProps({ index })}  />
                                     ))
-                                    
                                     }
                                     // onChange={this.handleChange(value)}
                                     renderInput={(params) => (
                                     <TextField {...params} variant="filled" label="Skills" placeholder="MongoDB, React, Vue etc."  />
                                     )}
-                                    onChange={(event, value) => {this.handleSkillChange(value)}}
+                                    // onChange={(event, value) => {this.handleSkillChange(value)}}
+                                    onChange={(event, value) => {
+                                        if (typeof value === 'string') {
+                                          // timeout to avoid instant validation of the dialog's form.
+                                          setTimeout(() => {
+                                            this.setState({opendialog : true});
+                                            this.setState({dialogValue: {
+                                              skill: value,
+                                              level: '',
+                                            }});
+                                          });
+                                        } else if (value && value.inputValue) {
+                                            this.setState({opendialog : true});
+                                          this.setState({dialogValue: {
+                                            skill: value.inputValue,
+                                            level: '',
+                                          }});
+                                        } else {
+                                          this.handleSkillChange(value);
+                                        }
+                                      }}
                                 />
+                                <Dialog open={this.state.opendialog} onClose={this.handleClose} aria-labelledby="form-dialog-title">
+                                    <form onSubmit={this.handleSkillChange }>
+                                    <DialogTitle id="form-dialog-title">Add a new film</DialogTitle>
+                                    <DialogContent>
+                                        <DialogContentText>
+                                        Did you miss any film in our list? Please, add it!
+                                        </DialogContentText>
+                                        <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        value={this.state.dialogValue.skill}
+                                        onChange={(event) => this.setState({dialogValue: { ...this.state.dialogValue, skill: event.target.value }})}
+                                        label="title"
+                                        type="text"
+                                        />
+                                        <TextField
+                                        margin="dense"
+                                        id="name"
+                                        value={this.state.dialogValue.level}
+                                        onChange={(event) =>this.setState({dialogValue: { ...this.state.dialogValue, level: event.target.value }})}
+                                        label="year"
+                                        type="number"
+                                        />
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button onClick={this.handleClose} color="primary">
+                                        Cancel
+                                        </Button>
+                                        <Button type="submit" color="primary">
+                                        Add
+                                        </Button>
+                                    </DialogActions>
+                                    </form>
+                                </Dialog>
+                                </React.Fragment>
                         </div>
                     </div>
                     <div className="card">
