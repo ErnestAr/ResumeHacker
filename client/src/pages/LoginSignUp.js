@@ -1,10 +1,10 @@
 import React , { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_USER, LOGIN_USER } from '../../utils/mutations';
+import { ADD_USER, LOGIN_USER } from '../utils/mutations';
 import { Link, Redirect } from 'react-router-dom';
 
 
-import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 function LoginSignUp() {
     const [formState, setFormState] = useState({
