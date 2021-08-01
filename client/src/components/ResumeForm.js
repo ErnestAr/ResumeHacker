@@ -300,14 +300,14 @@ export default class ResumeForm extends React.Component {
                                     )}
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />
-                                <Dialog onClose={this.handleClose} open={this.state.opendialog}>
+                                {/* <Dialog onClose={this.handleClose} open={this.state.opendialog}>
                                  <DialogTitle id="simple-dialog-title">dialog</DialogTitle>
                                     <List>
                                             <ListItem autoFocus button onClick={this.handleClose}>
                                                 close
                                             </ListItem>
                                     </List>
-                                </Dialog>
+                                </Dialog> */}
                         </div>
                     </div>
                     <div className="card">

@@ -28,15 +28,13 @@ export default function htmlTemp(data) {
                         <div class="container">
                             <div class="picture-resume-wrapper">
                         <div class="picture-resume">
-                        <span><img src="${data.files[0].name}" alt="" /></span>
+                        <span><img src="${typeof data.files[0] === 'undefined' ? "" : data.files[0].name}" alt="" /></span>
                 <defs>
                     <filter id="goo">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
                     <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" result="cm" />
                     </filter>
                 </defs>
-                
-                
                 <g filter="url(#goo)" >  
                 
                 <circle id="main_circle" class="st0" cx="171.5" cy="175.6" r="130"/>
