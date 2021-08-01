@@ -85,7 +85,7 @@ export default function UpdateUser() {
                     <input   onChange = {SignUpChange}
                         name="password"
                         type="password"
-                        value={formState.password}
+                        
                     > 
                     </input> 
 
