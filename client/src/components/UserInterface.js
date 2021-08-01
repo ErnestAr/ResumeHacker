@@ -1,6 +1,7 @@
 import React from 'react'
 import {VscAccount} from "react-icons/vsc"
 import "../pages/Dashboard/dashboard.css"
+import Fab from '@material-ui/core/Fab';
 
 export default function UserInterface() {
     return (
@@ -12,8 +13,10 @@ export default function UserInterface() {
             </div>
             <div  className="col-10 mt-3">
                 <h3 className="text-center  rounded ">Acoount Settings</h3> 
-                <h3 className="text-center bg-color rounded btn-acc acc">Update Information</h3>
-                <h3 className="text-center bg-color rounded btn-acc acc">Delete Sccount</h3>
+                
+                <Fab className= " mt-2 me-5"  style={{width: "295px"}} variant="extended" onClick={() => this.nextPath('/updatedelete')} >
+                    Update/Delete Account
+                </Fab>
             </div>
         </aside>
     )
