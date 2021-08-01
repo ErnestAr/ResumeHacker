@@ -12,7 +12,7 @@ export const LOGIN_USER = gql`
 
   `;
 
-  export const ADD_USER = gql `
+export const ADD_USER = gql`
     mutation addUser($userName: String!, $email: String!, $password: String!) {
       addUser(userName: $userName, email: $email, password: $password) {
         token
@@ -24,3 +24,21 @@ export const LOGIN_USER = gql`
     }
 `;
 
+export const UPDATE_USER = gql`
+  mutation updateUser($userName: String!, $email: String!, $password: String, $userId:ID) {
+    updateUser(userName: $userName, email: $email, password: $password, userId:$userId) {
+      _id
+      userName
+      email
+      password
+    }
+  }
+`;
+
+export const DELETE_USER = gql`
+  mutation deleteUser($userId:ID) {
+    deleteUser(userId:$userId) {
+        _id 
+    }
+  }
+`;
