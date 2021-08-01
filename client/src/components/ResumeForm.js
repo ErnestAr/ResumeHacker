@@ -28,7 +28,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-
+import Fab from '@material-ui/core/Fab';
 
 
 const zip = new JSZip();
@@ -310,7 +310,7 @@ export default class ResumeForm extends React.Component {
                                 </Dialog> */}
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card"  >
                         <form className="form-card" >
                             <h3 className=" col-4 my-2 " >Non-work related activities</h3>
 
@@ -318,12 +318,18 @@ export default class ResumeForm extends React.Component {
                                 <div className="form-group col-12 flex-column d-flex"> <label className="form-control-label px-3">Hobbies <span className="text-danger"> *</span></label> <input type="text" name="hobbies" placeholder="Skiing, Hiking, Martial Arts, etc. " onChange={this.handleChange} /> </div>
                             </div>
                             <div className="row justify-content-end">
-                                <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3>
+                                {/* <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3> */}
+                                <Fab className= " mt-2 me-2" variant="extended" onClick={this.createzip}>
+                                     Create resume
+                                </Fab>
                             </div>             
                         </form>
                     </div>
                     <div className="row justify-content-end">
-                        <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>  
+                        {/* <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>   */}
+                        <Fab className= " mt-2 me-5"  style={{width: "190px"}} variant="extended" onClick={() => this.nextPath('/dashboard')} >
+                            Close form
+                        </Fab>
                     </div> 
       </main>
     )
