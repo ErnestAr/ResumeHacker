@@ -58,7 +58,7 @@ export default function Templates() {
        
                 <Grid item xs={6} className="" >
                   <h4 >Template 1</h4>
-                  <img src="/images/template.png" alt="template2" className="img-fluid tempimg card-1" />
+                  <img src="/images/templategreen.png" alt="template2" className="img-fluid tempimg card-1" />
                   <div></div>
                 </Grid>
                 <Grid item xs={6} className="" >
