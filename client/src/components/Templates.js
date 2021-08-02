@@ -50,6 +50,7 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles({
   root: {
     maxWidth: 500,
+    border: '1px solid #d9d9d9',
   },
   media: {
     height: 500,
@@ -75,30 +76,33 @@ export default function Templates() {
   const classes = useStyles();
     return (
               <main className=" col-9 wm">
-                <section className="  row p-2  card ">
+                <section className="  row p-2 pb-3  card ">
                 <h2 className="p-1">Starter guide</h2>
                 <h5 className="p-1" style={{color: "grey"}}>This guide will assist you in creating  modern, interactive and responcive Developer Resume. </h5>
                 <List component="nav" className={classes.list} aria-label="mailbox folders">
-                  <ListItem button>
+                  <ListItem divider >
                     <ListItemText primary="1. Choose the template" secondary="There are different templates available, choose the one most appropriate for your future employment and current situation." />
                   </ListItem>
                   <Divider />
-                  <ListItem button divider>
+                  <ListItem  divider>
                     <ListItemText primary="2. Complete resume form"  secondary="The resume form will require you to fill out information about yourself and upload an avatar. Make sure to check spelling before submiting "/>
                   </ListItem>
-                  <ListItem button>
+                  <ListItem divider >
                     <ListItemText primary="3. Download and unzip template folder" secondary="When you click on 'Create Resume' button, a file containing your HTML, CSS and Avatar will be downloaded to your machine. Try it out by launching your HTML file in your browser." />
                   </ListItem>
-                  <Divider light />
-                  <ListItem button>
-                    <ListItemText onClick={handleClick1} primary="4. Deploy your resume with GitHub Pages"  secondary="Final Step! Deploy your new resume to GitHub Pages to make it accessable for your future employers or clients! Follow inctructions in the link to deploy by clicking this list item. "/>
+                  <Divider />
+                  <ListItem divider >
+                    <ListItemText  primary="4. Deploy your resume with GitHub Pages"  secondary="Final Step! Deploy your new resume to GitHub Pages to make it accessable for your future employers or clients! Follow inctructions in the link to deploy by clicking the lick below. "/>
+                  </ListItem>
+                  <ListItem  divider button>
+                    <ListItemText onClick={handleClick1} primary="GitHub Pages Instructions "  secondary="Click me.."/>
                   </ListItem>
                 </List>
                 </section>
-                <section className="row bd-highlight p-2 card">
-                  <h2 className="p-1">Select Template</h2>
-                </section>
-                <Grid container spacing={3}>
+                <section className="row bd-highlight  ">
+                  <h2 className=" ps-2 ">Select Template</h2>
+                  <Divider/>
+                <Grid container spacing={3} className="mt-2">
                   <Grid item xs={6} className="" >
                     <Card className={classes.root}>
                       <CardActionArea>
@@ -148,6 +152,7 @@ export default function Templates() {
                       </Card>
                   </Grid>
                 </Grid>
+                </section>
               </main>
     )
 }
