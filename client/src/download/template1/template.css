@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
  *, *::after, *::before {
@@ -12,7 +13,7 @@
 	 line-height: 1.5em;
 }
  a {
-	 color: #6c9;
+	 color: #97C8EB;
 	 text-decoration: none;
 }
  .clearfix::after, .clearfix::before {
@@ -185,7 +186,7 @@
 	 left: 0;
 }
  .profile .st0, .profile .st1 {
-	 fill: #6c9;
+	 fill: #97C8EB;
 }
  .experience {
 	 background: #3d3e42;
@@ -203,7 +204,7 @@
 	}
 }
  .experience h3.experience-title {
-	 color: #6c9;
+	 color: #97C8EB;
 	 text-align: left;
 	 text-transform: uppercase;
 	 font-size: 1.2em;
@@ -270,7 +271,7 @@
 	 padding-right: 8%;
 }
  .section-wrapper h3.section-title {
-	 color: #6c9;
+	 color: #97C8EB;
 	 text-align: left;
 	 text-transform: uppercase;
 	 font-size: 1.2em;
@@ -292,7 +293,7 @@
  .section-wrapper .skill-percentage::before {
 	 content: "";
 	 height: 6px;
-	 background: #6c9;
+	 background: #97C8EB;
 	 position: absolute;
 	 margin-top: 3px;
 	 bottom: 0;

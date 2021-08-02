@@ -4,7 +4,6 @@ const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
-const cors = require('cors');
 
 
 const PORT = process.env.PORT || 3001;
@@ -38,23 +37,3 @@ db.once('open', () => {
   });
 });
 
-// app.post('/create-pdf', (req, res) => {
-//   pdf.create(pdfTemplate(req.body), {}).toFile('result1.pdf', (err) => {
-//       if(err) {
-//           res.send(Promise.reject());
-//       }
-
-//       res.send(Promise.resolve());
-//   });
-// });
-
-// app.get('/fetch-pdf', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../server/result1.pdf'));
-// })
-
-
-app.get('/download', function(req, res){
-  const file = './download/template1';
-  console.log(file)
-res.download(file); // Set disposition and send it.
-});
