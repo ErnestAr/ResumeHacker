@@ -275,7 +275,7 @@ export default class ResumeForm extends React.Component {
                                     onChange={(event, value) => {this.handleSkillChange(value)}}
                                 />
                                 {/* <Dialog onClose={this.handleClose} open={this.state.opendialog}>
-                                 <DialogTitle id="simple-dialog-title">dialog</DialogTitle>
+                                <DialogTitle id="simple-dialog-title">dialog</DialogTitle>
                                     <List>
                                             <ListItem autoFocus button onClick={this.handleClose}>
                                                 close
@@ -307,7 +307,7 @@ export default class ResumeForm extends React.Component {
                             <div className="row justify-content-end">
                                 {/* <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3> */}
                                 <Fab className= " mt-2 me-2" variant="extended" onClick={this.createzip}>
-                                     Create resume
+                                    Create resume
                                 </Fab>
                             </div>             
                         </form>
