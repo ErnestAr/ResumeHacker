@@ -45,6 +45,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import {BsCircleFill} from 'react-icons/bs';
 // onClick={handleClick}
 
 const useStyles = makeStyles({
@@ -57,7 +58,17 @@ const useStyles = makeStyles({
   },
   list: {
     width: '100%',
-  }
+  },
+  green: {
+    color: "#6c9",
+  },
+  blue: {
+    color: "#97C8EB",
+  },
+  dark: {
+    color: "#3d3e42",
+  },
+
 });
 
 
@@ -95,7 +106,7 @@ export default function Templates() {
                     <ListItemText  primary="4. Deploy your resume with GitHub Pages"  secondary="Final Step! Deploy your new resume to GitHub Pages to make it accessable for your future employers or clients! Follow inctructions in the link to deploy by clicking the lick below. "/>
                   </ListItem>
                   <ListItem  divider button>
-                    <ListItemText onClick={handleClick1} primary="GitHub Pages Instructions "  secondary="Click me.."/>
+                    <ListItemText onClick={handleClick1} primary="GitHub Pages Instructions "  secondary="Read more.."/>
                   </ListItem>
                 </List>
                 </section>
@@ -113,9 +124,10 @@ export default function Templates() {
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="h2">
-                            Software Developer
+                            Software Developer <BsCircleFill className={classes.green}/> <BsCircleFill className={classes.dark}/>
                           </Typography>
                           <Typography variant="body2" color="textSecondary" component="p">
+                            
                             For a software developer with work experience, this template includes a work experience section and leaves out projects and education.
                           </Typography>
                         </CardContent>
@@ -137,10 +149,11 @@ export default function Templates() {
                           />
                           <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                              Software Developer (Entry Level)
+                              Software Developer (Entry Level) <BsCircleFill className={classes.blue}/>  <BsCircleFill className={classes.dark}/>
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                               For a software developer who's looking for his first job, this template includes a project section and education and leaves out work experience.
+                              
                             </Typography>
                           </CardContent>
                         </CardActionArea>
