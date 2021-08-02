@@ -145,14 +145,6 @@ export default class ResumeForm extends React.Component {
       // save values to userInput
     handleChange = ({ target: { value, name }}) => this.setState( { [name]: value })
     
-    //   create skill key value pairs
-    handleSkillChange =  (input) => { 
-        const skills = this.state.skills;
-        const skill = this.state.currentSkill
-        const inputLevel = this.state.currentLevel;
-        this.setState({ skills: {...skills, currentSkill: inputLevel}})
-    }
-   
 
       // create zip file and initialize download
     createzip = () =>{
@@ -270,27 +262,7 @@ export default class ResumeForm extends React.Component {
                     <div className="card">
                         <div className="form-card classes"  style={this.classes.root} >
                             <h3 className=" col-3 my-2 " > Technical Skills</h3>
-                                <p className="  my-2 " style={{color: "grey"}}> Choose level of proficiency, then add a technology ("1" - Beginner, "10"-Expert). </p>
-                                <FormControl className="mb-3" variant="filled" style={{width: "90px"}} >
-                                <InputLabel id="demo-simple-select-label" >Level</InputLabel>
-                                    <Select  
-                                    
-                                    labelId="demo-simple-select-filled-label"
-                                    id="demo-simple-select-filled"
-                                    
-                                    value={this.number}
-                                    onChange={this.changeNumber}
-                                    defaultValue={this.number}
-                                    >
-                                    
-                                    {nums.map((num) => (
-                                    <MenuItem  value={num}>{num}</MenuItem>
-                                    ))}
-                                    </Select>
-                                </FormControl>
-                            {/* Create list to choose skills and and rating */}
-                            <p className="  my-2 " style={{color: "grey"}}> Select technology from the list or enter your own.  </p>
-                            
+                                <p className="  my-2 " style={{color: "grey"}}> Select technology and level of proficiency ("1" - Beginner, "10"-Expert). </p>
                                 <Autocomplete
                                     multiple
                                     id="tags-filled"
@@ -311,17 +283,16 @@ export default class ResumeForm extends React.Component {
                                     onChange={(event, value) => {this.handleClickOpen(value)}}
                                 />
                                  <Dialog open={this.state.opendialog} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-                                    <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                                    <DialogTitle id="form-dialog-title">Technical Skill Level</DialogTitle>
                                     <DialogContent>
                                     <DialogContentText>
-                                        To subscribe to this website, please enter your email address here. We will send updates
-                                        occasionally.
+                                        Enter a number between 1 and 10 to indicate your level of proficiency in the skill you selected.
                                     </DialogContentText>
                                     <TextField
                                         autoFocus
                                         margin="dense"
                                         id="name"
-                                        label="Email Address"
+                                       
                                         type="email"
                                         fullWidth
                                         value={this.state.currentLevel} 
@@ -330,10 +301,7 @@ export default class ResumeForm extends React.Component {
                                     </DialogContent>
                                     <DialogActions>
                                     <Button onClick={this.handleClose} color="primary">
-                                        Cancel
-                                    </Button>
-                                    <Button onClick={this.handleClose} color="primary">
-                                        Subscribe
+                                        Submit
                                     </Button>
                                     </DialogActions>
                                 </Dialog>
