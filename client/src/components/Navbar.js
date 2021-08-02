@@ -11,6 +11,7 @@ import { useQuery } from '@apollo/client';
 
 
 
+
 const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -23,20 +24,22 @@ function TheNavbar() {
     return (
         <Navbar>
             <Container >
-                <Nav className="me-auto d-flex justify-content-end">
+                <Nav className="me-auto d-flex justify-content-end" style={{width:'100vw'}}>
                 {Auth.loggedIn() ? (
-                    <div className='d-flex flex-row'>
-                        <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
-                        <Nav.Link className='navbar-link' href={"/Dashboard"}><span>Dashboard</span></Nav.Link>
-                        <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
-                        <button className="btn btn-lg btn-light m-2" onClick={logout}>Logout</button>
+
+                    <div className='d-flex'>
+                        <Nav.Link className='navbar-link mt-2' href="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Nav.Link>
+                        <Nav.Link className='navbar-link mt-2' href="/Dashboard"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Nav.Link>
+                        <Nav.Link className='navbar-link mt-2' href="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Nav.Link>
+                        <button className="btn btn-lg btn-primary m-2 navBtn" onClick={logout}>Logout</button>
+
                     </div>
                 ) : (
                     <div className='d-flex flex-row'>
-                        <Nav.Link className='navbar-link' href="/"><span>Home</span></Nav.Link>
-                        <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Dashboard</span></Nav.Link>
-                        <Nav.Link className='navbar-link' href="/About"><span>About</span></Nav.Link>
-                        <Nav.Link className='navbar-link' href="/LoginSignUp"><span>Login/Signup</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Nav.Link>
+                        <Nav.Link className='navbar-link' href="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Login/Signup</span></Nav.Link>
                     </div>
                 )}      
                 </Nav>

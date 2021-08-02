@@ -76,82 +76,51 @@ function LoginSignUp() {
 
 
     return (
-        
-        <div>
-          
-            <div>
+      <section className='container'>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div style={{position:'absolute', left:'26vw', height:'100vh', width:'100vw', opacity:'0.5', backgroundImage:`url('https://www.greatsampleresume.com/wp-content/themes/resumebaking/img/ats.svg')`, backgroundRepeat:'no-repeat'}}></div>
+        <div className='row justify-content-around'>
+
+          <div className='col-3'>
+          <p style={{color:'#3A7CA5', fontWeight:'bold', fontSize:'4em'}}> Sign<span style={{fontStyle:'italic', color:'#16425B'}}>In</span> </p>
             {logindata ? (
               <Redirect to="/Dashboard"/>
             ) : (
-              <div>
-                  <p>login page</p>
-                  <input onChange={LoginChange}     
-                  name="userName"
-                  type="text"
-                  value={loginState.userName}>
-                                      
-                  </input>
+              <div className='card' style={{width:'20vw', margin:'0', backgroundColor:'#16425B', borderRadius:'20px', boxShadow:'1px 1px 10px black'}}>
+                  <label style={{color:'white'}}>Username</label>
+                  <input onChange={LoginChange} name="userName" type="text" value={loginState.userName}></input>
                   <br></br>
-                  <br></br>
-                  <input onChange={LoginChange}     
-                      name="password"
-                      type="password"
-                      value={loginState.password}
-                  > 
-                  </input>       
-                  <button
-                      style={{ cursor: 'pointer' }}
-                      type="submit"
-                      onClick = {LoginUser}
-                      >
-                      Login Button
-                  </button>
+                  <label style={{color:'white'}}>Password</label>
+                  <input onChange={LoginChange} name="password" type="password" value={loginState.password}></input>       
+                  <button class="btn btn-info" style={{ cursor: 'pointer' }} type="submit" onClick = {LoginUser}>Login</button>
               </div>
             )}
-            </div>
+          </div>
 
-            <div>
+            <div className='col-3'>
+            <p style={{color:'#3A7CA5', fontWeight:'bold', fontSize:'4em'}}>Sign<span style={{fontStyle:'italic', color:'#16425B'}}>Up</span> </p>
                 {signUpdata ? (
                     
                     <Redirect to="/Dashboard"/>
                     
                 ) :(
-                    <div>
-                        <p>Sign up page</p>
-                        <input onChange={SignUpChange}
-                        name="userName"
-                        type="text"
-                        value={formState.name}>
-                        </input>
+                    <div className='card' style={{width:'20vw', margin:'0', backgroundColor:'#16425B', borderRadius:'20px', boxShadow:'1px 1px 10px black'}}>
+                        <label style={{color:'white'}}>Username</label>
+                        <input onChange={SignUpChange} name="userName" type="text" value={formState.name}></input>
                         <br></br>
+                        <label style={{color:'white'}}>Email</label>
+                        <input onChange={SignUpChange} name="email" type="email" value={formState.email}></input>
                         <br></br>
-                        <input onChange={SignUpChange}     
-                        name="email"
-                        type="email"
-                        value={formState.email}>
-                                            
-                        </input>
-                        <br></br>
-                        <br></br>
-                        <input onChange={SignUpChange}     
-                            name="password"
-                            type="password"
-                            value={formState.password}
-                        > 
-                        </input>       
-                        <button
-                            style={{ cursor: 'pointer' }}
-                            type="submit"
-                            onClick = {SignUp}
-                            >
-                            Sign Up
-                        </button>
+                        <label style={{color:'white'}}>Password</label>
+                        <input onChange={SignUpChange} name="password" type="password" value={formState.password}></input>       
+                        <button class="btn btn-info" style={{ cursor: 'pointer' }} type="submit" onClick={SignUp}>Sign Up</button>
                     </div>
                 )}
-            </div>
-            
-
+            </div> 
         </div>
+      </section>
     )
 }
 

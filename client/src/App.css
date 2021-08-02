@@ -14,6 +14,14 @@ span:hover {
   float:right;
 }
 
+.nav-text:hover {
+  text-decoration: underline;
+}
+
+.navBtn:hover {
+  box-shadow: 1px 1px 10px black;
+}
+
 .resource-images{
   box-shadow: 1px 1px 10px grey;
 }

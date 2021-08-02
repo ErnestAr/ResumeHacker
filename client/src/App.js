@@ -47,6 +47,7 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div>
         <Navbar />
+        <hr style={{marginInline:'5vw'}}></hr>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/About' component={About} />

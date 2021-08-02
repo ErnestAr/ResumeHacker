@@ -26,10 +26,10 @@ export default function Homepage() {
                 {/* MAIN LANDING PAGE SLIDE 1:--------  APPLICATION HEADING AND BRIEF DESCRIPTION */}
                 <SwiperSlide>
                     <section className='d-flex'>
-                        <div  className='col d-flex  flex-column justify-content-center'>
+                        <div  className='col d-flex  flex-column justify-content-center' style={{marginLeft:'5vw'}}>
                             <p style={{color:'#3A7CA5', fontWeight:'bold', fontSize:'4em'}}> Resume<span style={{fontStyle:'italic', color:'#16425B'}}>Hacker</span> </p>
                             <br></br>
-                            <p style={{fontSize:'large', color:'#3A7CA5', fontWeight:'bold', fontStyle:'italic'}}>Resume building application catered to software developers and IT personal for the tech industry.</p>
+                            <p style={{fontSize:'1.5em', color:'#3A7CA5', fontWeight:'bold', fontStyle:'italic'}}>Resume building application catered to software developers and IT personal for the tech industry.</p>
                             <div>
                                 <Button variant="info" size="lg">Get Started</Button>
                             </div>
