@@ -107,20 +107,26 @@ export default class ResumeForm extends React.Component {
         dialogValue: {skill: '', level: ''},
         opendialog: false,
         currentSkill: '',
+        currentLevel: '',
 }
         
         // handle dialog close
-        handleClickOpen = () => {
+        handleClickOpen = (value) => {
+            this.setState({currentSkill: value})
             this.setState({opendialog: true});
           };
         
         handleClose = (value) => {
             this.setState({opendialog: false});
+            const skills = this.state.skills;
+            const skill = this.state.currentSkill
+            const inputLevel = this.state.currentLevel;
+            this.setState({ skills: {...skills, [skill[skill.length - 1]]: inputLevel}})
           };
         
         updateInputValue=(evt) => {
             this.setState({
-            currentSkill: evt.target.value
+            currentLevel: evt.target.value
             });
         }
 
@@ -141,11 +147,10 @@ export default class ResumeForm extends React.Component {
     
     //   create skill key value pairs
     handleSkillChange =  (input) => { 
-        this.setState({opendialog: true})
         const skills = this.state.skills;
-        const inputLevel = this.state.number
-        this.setState({ skills: {...skills, [input[input.length - 1]]: inputLevel}})
-      
+        const skill = this.state.currentSkill
+        const inputLevel = this.state.currentLevel;
+        this.setState({ skills: {...skills, currentSkill: inputLevel}})
     }
    
 
@@ -303,7 +308,7 @@ export default class ResumeForm extends React.Component {
                                     // onChange={(event, value) => {this.handleSkillChange(value)}}
                                     // call handleClickOpen function on change
                                     
-                                    onChange={this.handleClickOpen}
+                                    onChange={(event, value) => {this.handleClickOpen(value)}}
                                 />
                                  <Dialog open={this.state.opendialog} onClose={this.handleClose} aria-labelledby="form-dialog-title">
                                     <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
@@ -319,7 +324,7 @@ export default class ResumeForm extends React.Component {
                                         label="Email Address"
                                         type="email"
                                         fullWidth
-                                        value={this.state.currentSkill} 
+                                        value={this.state.currentLevel} 
                                         onChange={this.updateInputValue}
                                     />
                                     </DialogContent>
