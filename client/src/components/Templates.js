@@ -48,7 +48,9 @@ export default function Templates() {
   function handleClick() {
     history.push("/dashboard/resume");
   };
-
+  function handleClickblue() {
+    history.push("/dashboard/resumeblue");
+  };
   function handleClick1() {
     // direct user to different url
     const href="https://hackernoon.com/use-custom-domain-with-github-pages-2-straightforward-steps-cf561eee244f";
@@ -129,7 +131,7 @@ export default function Templates() {
                           </CardContent>
                         </CardActionArea>
                         <CardActions>
-                          <Button size="small" color="primary" onClick={handleClick}>
+                          <Button size="small" color="primary" onClick={handleClickblue}>
                             Create Resume
                           </Button>
                         </CardActions>
