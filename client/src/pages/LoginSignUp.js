@@ -44,8 +44,6 @@ function LoginSignUp() {
         password: '',
       });
     };
-    
-
     const SignUpChange = (event) => {
         const { name, value } = event.target;
     

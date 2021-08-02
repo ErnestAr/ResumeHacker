@@ -1,8 +1,7 @@
 import React from 'react'
 import {VscAccount} from "react-icons/vsc"
 import "../pages/Dashboard/dashboard.css"
-import UpdateUser from "./UpdateUser.js"
-import DeleteUser from "./DeleteUser.js"
+import {Fab} from "@material-ui/core"
 
 
 export default function UserInterface() {
@@ -20,8 +19,7 @@ export default function UserInterface() {
                     Update/Delete Account
                 </Fab>
             </div>
-            <UpdateUser/>
-            <DeleteUser/>
+          
         </aside>
     )
 }
