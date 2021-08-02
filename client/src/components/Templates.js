@@ -43,6 +43,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
 // onClick={handleClick}
 
 const useStyles = makeStyles({
@@ -52,6 +54,9 @@ const useStyles = makeStyles({
   media: {
     height: 500,
   },
+  list: {
+    width: '100%',
+  }
 });
 
 
@@ -65,6 +70,23 @@ export default function Templates() {
               <main className=" col-9 wm">
                 <section className="  row p-2  card ">
                 <h2 className="p-1">Starter guide</h2>
+                <h5 className="p-1" style={{color: "grey"}}>This guide will assist you in creating  modern, interactive and responcive Developer Resume. </h5>
+                <List component="nav" className={classes.list} aria-label="mailbox folders">
+                  <ListItem button>
+                    <ListItemText primary="1. Inbox" secondary="hey this is a secondary text" />
+                  </ListItem>
+                  <Divider />
+                  <ListItem button divider>
+                    <ListItemText primary="2. Drafts"  secondary="hey this is a secondary text"/>
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemText primary="3. Trash" secondary="hey this is a secondary text" />
+                  </ListItem>
+                  <Divider light />
+                  <ListItem button>
+                    <ListItemText primary="4. Spam"  secondary="hey this is a secondary text"/>
+                  </ListItem>
+                </List>
                 </section>
                 <section className="row bd-highlight p-2 card">
                   <h2 className="p-1">Select Template</h2>
@@ -83,8 +105,7 @@ export default function Templates() {
                             Software Developer
                           </Typography>
                           <Typography variant="body2" color="textSecondary" component="p">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
+                            For a software developer with work experience, this template includes a work experience section and leaves out projects and education.
                           </Typography>
                         </CardContent>
                       </CardActionArea>
@@ -108,8 +129,7 @@ export default function Templates() {
                               Software Developer (Entry Level)
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                              across all continents except Antarctica
+                              For a software developer who's looking for his first job, this template includes a project section and education and leaves out work experience.
                             </Typography>
                           </CardContent>
                         </CardActionArea>
