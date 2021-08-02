@@ -64,7 +64,14 @@ export default function Templates() {
   const history = useHistory();
   function handleClick() {
     history.push("/dashboard/resume");
+  };
+
+  function handleClick1() {
+    // direct user to different url
+    const href="https://hackernoon.com/use-custom-domain-with-github-pages-2-straightforward-steps-cf561eee244f";
+    window.open(href, '_blank');
   }
+
   const classes = useStyles();
     return (
               <main className=" col-9 wm">
@@ -73,18 +80,18 @@ export default function Templates() {
                 <h5 className="p-1" style={{color: "grey"}}>This guide will assist you in creating  modern, interactive and responcive Developer Resume. </h5>
                 <List component="nav" className={classes.list} aria-label="mailbox folders">
                   <ListItem button>
-                    <ListItemText primary="1. Inbox" secondary="hey this is a secondary text" />
+                    <ListItemText primary="1. Choose the template" secondary="There are different templates available, choose the one most appropriate for your future employment and current situation." />
                   </ListItem>
                   <Divider />
                   <ListItem button divider>
-                    <ListItemText primary="2. Drafts"  secondary="hey this is a secondary text"/>
+                    <ListItemText primary="2. Complete resume form"  secondary="The resume form will require you to fill out information about yourself and upload an avatar. Make sure to check spelling before submiting "/>
                   </ListItem>
                   <ListItem button>
-                    <ListItemText primary="3. Trash" secondary="hey this is a secondary text" />
+                    <ListItemText primary="3. Download and unzip template folder" secondary="When you click on 'Create Resume' button, a file containing your HTML, CSS and Avatar will be downloaded to your machine. Try it out by launching your HTML file in your browser." />
                   </ListItem>
                   <Divider light />
                   <ListItem button>
-                    <ListItemText primary="4. Spam"  secondary="hey this is a secondary text"/>
+                    <ListItemText onClick={handleClick1} primary="4. Deploy your resume with GitHub Pages"  secondary="Final Step! Deploy your new resume to GitHub Pages to make it accessable for your future employers or clients! Follow inctructions in the link to deploy by clicking this list item. "/>
                   </ListItem>
                 </List>
                 </section>
