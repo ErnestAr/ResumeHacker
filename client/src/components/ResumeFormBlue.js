@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import "../pages/Dashboard/dashboard.css";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
-import htmlTemp from "../download/template1/templatehtml1";
-import cssTemp from "../download/template1/templatecss1";
+import htmlTemp1 from "../download/template2/templatehtml2";
+import cssTemp1 from "../download/template2/templatecss2";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -134,8 +134,8 @@ export default class ResumeForm extends React.Component {
 
   // create zip file and initialize download
   createzip = () => {
-    zip.file("index.html", htmlTemp(this.state));
-    zip.file("style.css", cssTemp(this.state.skills));
+    zip.file("index.html", htmlTemp1(this.state));
+    zip.file("style.css", cssTemp1(this.state.skills));
     // add image from files state to zip
     this.state.files.forEach((file) => {
       zip.file(file.name, file.data);
