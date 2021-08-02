@@ -17,6 +17,12 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {DropzoneArea} from 'material-ui-dropzone'
 import Fab from '@material-ui/core/Fab';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 const zip = new JSZip();
@@ -104,11 +110,19 @@ export default class ResumeForm extends React.Component {
 }
         
         // handle dialog close
-    
-    handleClose(){
-        this.setState({dialogValue: {skill: '', level: ''}})
-        this.setState({opendialog: false})
-    }
+        handleClickOpen = () => {
+            this.setState({opendialog: true});
+          };
+        
+        handleClose = (value) => {
+            this.setState({opendialog: false});
+          };
+        
+        updateInputValue=(evt) => {
+            this.setState({
+            currentSkill: evt.target.value
+            });
+        }
 
         // style for the form
     useStyles = makeStyles((theme) => ({
@@ -282,20 +296,42 @@ export default class ResumeForm extends React.Component {
                                         <Chip  variant="outlined" label={option} {...getTagProps({ index })}  />
                                     ))
                                     }
-                                    // onChange={this.handleChange(value)}
+                                    
                                     renderInput={(params) => (
                                     <TextField {...params} variant="filled" label="Skills" placeholder="MongoDB, React, Vue etc."  />
                                     )}
-                                    onChange={(event, value) => {this.handleSkillChange(value)}}
+                                    // onChange={(event, value) => {this.handleSkillChange(value)}}
+                                    // call handleClickOpen function on change
+                                    
+                                    onChange={this.handleClickOpen}
                                 />
-                                {/* <Dialog onClose={this.handleClose} open={this.state.opendialog}>
-                                 <DialogTitle id="simple-dialog-title">dialog</DialogTitle>
-                                    <List>
-                                            <ListItem autoFocus button onClick={this.handleClose}>
-                                                close
-                                            </ListItem>
-                                    </List>
-                                </Dialog> */}
+                                 <Dialog open={this.state.opendialog} onClose={this.handleClose} aria-labelledby="form-dialog-title">
+                                    <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                                    <DialogContent>
+                                    <DialogContentText>
+                                        To subscribe to this website, please enter your email address here. We will send updates
+                                        occasionally.
+                                    </DialogContentText>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Email Address"
+                                        type="email"
+                                        fullWidth
+                                        value={this.state.currentSkill} 
+                                        onChange={this.updateInputValue}
+                                    />
+                                    </DialogContent>
+                                    <DialogActions>
+                                    <Button onClick={this.handleClose} color="primary">
+                                        Cancel
+                                    </Button>
+                                    <Button onClick={this.handleClose} color="primary">
+                                        Subscribe
+                                    </Button>
+                                    </DialogActions>
+                                </Dialog>
                         </div>
                     </div>
                     <div className="card"  >
