@@ -41,34 +41,29 @@ import InfoIcon from '@material-ui/icons/Info';
 
 export default function Templates() {
   const history = useHistory();
-
   function handleClick() {
     history.push("/dashboard/resume");
   }
     return (
             <main className=" col-9 wm">
-               <section className="  row p-2  card ">
-               <h2 className="p-1">Starter guide</h2>
+              <section className="  row p-2  card ">
+              <h2 className="p-1">Starter guide</h2>
               </section>
               <section className="row bd-highlight p-2 card">
                 <h2 className="p-1">Select Template</h2>
-                 
               </section>
               <Grid container spacing={3}>
-       
                 <Grid item xs={6} className="" >
                   <h4 >Template 1</h4>
-                  <img src="/images/templategreen.png" alt="template2" className="img-fluid tempimg card-1" />
+                  <img src="/images/templategreen.png" alt="template2" className="img-fluid tempimg card-1" onClick={handleClick}/>
                   <div></div>
                 </Grid>
                 <Grid item xs={6} className="" >
                   <h4 >Template 2</h4>
-                  <img src="/images/template.png" alt="template2" className="img-fluid tempimg card-1" />
+                  <img src="/images/templateblue.png" alt="template2" className="img-fluid tempimg card-1" />
                   <div></div>
                 </Grid>
-
               </Grid>
-                    
           </main>
     )
 }
