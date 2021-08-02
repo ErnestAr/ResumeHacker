@@ -46,6 +46,7 @@ import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import {BsCircleFill} from 'react-icons/bs';
+import {VscTasklist} from 'react-icons/vsc'
 // onClick={handleClick}
 
 const useStyles = makeStyles({
@@ -69,6 +70,7 @@ const useStyles = makeStyles({
     color: "#3d3e42",
   },
 
+
 });
 
 
@@ -88,8 +90,8 @@ export default function Templates() {
     return (
               <main className=" col-9 wm">
                 <section className="  row p-2 pb-3  card ">
-                <h2 className="p-1">Starter guide</h2>
-                <h5 className="p-1" style={{color: "grey"}}>This guide will assist you in creating  modern, interactive and responcive Developer Resume. </h5>
+                <h2 className="p-1 ps-3">Starter guide  <VscTasklist size={40}/> </h2>
+                <h5 className="p-1 ps-3" style={{color: "grey"}}>This guide will assist you in creating  modern, interactive and responcive Developer Resume. </h5>
                 <List component="nav" className={classes.list} aria-label="mailbox folders">
                   <ListItem divider >
                     <ListItemText primary="1. Choose the template" secondary="There are different templates available, choose the one most appropriate for your future employment and current situation." />
@@ -110,7 +112,7 @@ export default function Templates() {
                   </ListItem>
                 </List>
                 </section>
-                <section className="row bd-highlight  ">
+                <section className="row bd-highlight ps-1 ms-1 ">
                   <h2 className=" ps-2 ">Select Template</h2>
                   <Divider/>
                 <Grid container spacing={3} className="mt-2">
