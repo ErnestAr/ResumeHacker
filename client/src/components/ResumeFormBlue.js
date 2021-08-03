@@ -138,7 +138,7 @@ export default class ResumeForm extends React.Component {
     zip.file("style.css", cssTemp1(this.state.skills));
     // add image from files state to zip
     this.state.files.forEach((file) => {
-      zip.file(file.name, file.data);
+      zip.file(file.name, file);
     });
     zip.generateAsync({ type: "blob" }).then(
       function (blob) {
@@ -280,7 +280,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="git"
+                  name="github"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -296,7 +296,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="linkin"
+                  name="linkedin"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -346,7 +346,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="projectlink1"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -378,7 +378,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="project1"
+                  name="project2"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -390,7 +390,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="projectlink2"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -404,7 +404,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="description1"
+                  name="description2"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -422,7 +422,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="project1"
+                  name="project3"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -434,7 +434,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="projectlink3"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -448,7 +448,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="description1"
+                  name="description3"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -524,7 +524,7 @@ export default class ResumeForm extends React.Component {
         </div>
         <div className="card">
           <form className="form-card">
-            <h3 className=" col-4 my-2 ">Educatoin</h3>
+            <h3 className=" col-4 my-2 ">Education</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
                 
@@ -533,7 +533,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="project1"
+                  name="school"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -545,7 +545,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="schooldate"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -559,7 +559,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="hobbies"
+                  name="program"
                   placeholder=""
                   onChange={this.handleChange}
                 />

@@ -14,7 +14,7 @@ export default function htmlTemp1(data) {
         const htmlTempst = `
         <!DOCTYPE html>
             <html lang="en">
-            <head>r
+            <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,9 +78,9 @@ export default function htmlTemp1(data) {
                     </div>
                     <div class="contact-social clearfix">
                         <ul class="list-titles">
-                            <li>GitHub</li>
-                            <li>LinkedIn</li>
-                            <li>Facebook</li>
+                            <li>${data.github}</li>
+                            <li>${data.linkedin}</li>
+                            <li>${data.facebook}</li>
                         </ul>
                         <ul class="list-content"> 
                             <li><a href="${data.github}">${data.github}</a></li>
@@ -93,7 +93,7 @@ export default function htmlTemp1(data) {
                 
                 <section class="experience section-padding">
                     <div class="container">
-                        <h3 class="experience-title">Experience</h3>
+                        <h3 class="experience-title">Personal Projects</h3>
                     
                     <div class="experience-wrapper">
                         <div class="company-wrapper clearfix">
@@ -135,7 +135,6 @@ export default function htmlTemp1(data) {
                         <h3 class="section-title">Skills</h3> 
                             <ul>
                                ${addSkill(data.skills)}
-                            
                             </ul>
                         
                     </div>

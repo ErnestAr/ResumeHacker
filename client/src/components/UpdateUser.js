@@ -1,14 +1,11 @@
 import React , { useState } from 'react';
-import { useParams } from 'react-router-dom';
-
 import { QUERY_ME } from '../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import {UPDATE_USER} from '../utils/mutations';
-
+import {Fab} from "@material-ui/core"
 
 export default function UpdateUser() {
 
-    console.log("herrrrr")
     let { loading, error, data } = useQuery(QUERY_ME, {
         onCompleted: (data) => {
             setFormState({
@@ -21,9 +18,6 @@ export default function UpdateUser() {
     let newData = data?.me || {}
     let id = newData._id;
     
-   
-    
-
     const [formState, setFormState] = useState({});
 
     const [updateUser, { signUpError, signUpdata }] = useMutation(UPDATE_USER);
@@ -52,17 +46,13 @@ export default function UpdateUser() {
         console.log("in here");
     };
 
-   
-    // const data = useParams();
-    // console.log("-------------------------------------")
-    // console.log(data);
     return (
-        <main className=" col-9 p-1">
+        <div div className="card col-4">
             {loading ? (
             <div>Loading...</div>
           ):(
                 <div>
-                    <p>username</p>
+                    <p>Username</p>
                     <input onChange = {SignUpChange}
                     name="userName"
                     type="text"
@@ -71,7 +61,7 @@ export default function UpdateUser() {
                     </input>
                         <br></br>
                         <br></br>
-                        <p>email</p>
+                        <p>Email</p>
                     <input   onChange = {SignUpChange}
                     name="email"
                     type="email"
@@ -81,24 +71,19 @@ export default function UpdateUser() {
                     </input>
                     <br></br>
                     <br></br>
-                    <p>password</p>
+                    <p>Password</p>
                     <input   onChange = {SignUpChange}
                         name="password"
                         type="password"
                         
                     > 
                     </input> 
-
-                    <button 
-                        style={{ cursor: 'pointer' }}
-                        type="submit"
-                        onClick = {Update}
-                        >
-                        Update
-                    </button> 
                 </div>
-             )};  
-
-        </main>       
+                
+             )}
+                <Fab className= "mt-4 me-5"  type='submit' style={{width: "245px"}} variant="extended" onClick = {Update}  >
+                    Update Account
+                </Fab>
+        </div>       
     )
 }
