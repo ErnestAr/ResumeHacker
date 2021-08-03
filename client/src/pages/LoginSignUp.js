@@ -2,6 +2,7 @@ import React , { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER, LOGIN_USER } from '../utils/mutations';
 import { Link, Redirect } from 'react-router-dom';
+import {Fab} from "@material-ui/core"
 
 
 import Auth from '../utils/auth';
@@ -73,25 +74,27 @@ function LoginSignUp() {
 
 
     return (
-      <section className='container'>
+      <section className='container mt-5'>
         <br></br>
         <br></br>
         <br></br>
-        <div style={{position:'absolute', left:'26vw', height:'100vh', width:'100vw', opacity:'0.5', backgroundImage:`url('https://www.greatsampleresume.com/wp-content/themes/resumebaking/img/ats.svg')`, backgroundRepeat:'no-repeat'}}></div>
-        <div className='row justify-content-around'>
+        <div style={{position:'absolute', left:'26vw', height:'100vh', width:'100vw', opacity:'0.3', backgroundImage:`url('https://www.greatsampleresume.com/wp-content/themes/resumebaking/img/ats.svg')`, backgroundRepeat:'no-repeat'}}></div>
+        <div className='row justify-content-center'>
 
           <div className='col-3'>
           <p style={{color:'#3A7CA5', fontWeight:'bold', fontSize:'4em'}}> Sign<span style={{fontStyle:'italic', color:'#16425B'}}>In</span> </p>
             {logindata ? (
               <Redirect to="/Dashboard"/>
             ) : (
-              <div className='card' style={{width:'20vw', margin:'0', backgroundColor:'#16425B', borderRadius:'20px', boxShadow:'1px 1px 10px black'}}>
+              <div className='card' >
                   <label style={{color:'white'}}>Username</label>
                   <input onChange={LoginChange} name="userName" type="text" value={loginState.userName}></input>
                   <br></br>
                   <label style={{color:'white'}}>Password</label>
                   <input onChange={LoginChange} name="password" type="password" value={loginState.password}></input>       
-                  <button class="btn btn-info" style={{ cursor: 'pointer' }} type="submit" onClick = {LoginUser}>Login</button>
+                  <Fab className= " mt-2 me-5"  style={{width: "225px"}} variant="extended"  type="submit" onClick = {LoginUser}  >
+                      Sign up
+                  </Fab>
               </div>
             )}
           </div>
@@ -103,7 +106,7 @@ function LoginSignUp() {
                     <Redirect to="/Dashboard"/>
                     
                 ) :(
-                    <div className='card' style={{width:'20vw', margin:'0', backgroundColor:'#16425B', borderRadius:'20px', boxShadow:'1px 1px 10px black'}}>
+                    <div className='card' >
                         <label style={{color:'white'}}>Username</label>
                         <input onChange={SignUpChange} name="userName" type="text" value={formState.name}></input>
                         <br></br>
@@ -112,7 +115,9 @@ function LoginSignUp() {
                         <br></br>
                         <label style={{color:'white'}}>Password</label>
                         <input onChange={SignUpChange} name="password" type="password" value={formState.password}></input>       
-                        <button class="btn btn-info" style={{ cursor: 'pointer' }} type="submit" onClick={SignUp}>Sign Up</button>
+                        <Fab className= " mt-2 me-5"  style={{width: "225px"}} variant="extended" type="submit" onClick={SignUp}  >
+                            Sign up
+                        </Fab>
                     </div>
                 )}
             </div> 

@@ -22,15 +22,13 @@ function TheNavbar() {
     
     return (
         <Navbar>
-           
                 <Nav className="me-auto d-flex justify-content-end mb-4" style={{width:'100vw'}}>
                 {Auth.loggedIn() ? (
- 
                     <div className='d-flex'>
                         <Link className='navbar-link mt-2 mx-3' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
                         <Link className='navbar-link mt-2  mx-3' to="/Dashboard"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
                         <Link className='navbar-link mt-2  mx-3' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
-                        <Link className='navbar-link mt-2  mx-3' to="" onClick={logout}><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Logout</span></Link>
+                        <Link className='navbar-link mt-2  mx-3' to="" onClick={logout} ><span className='nav-text' style={{color:'#0A2239', fontSize:'1.5em'}}>Logout</span></Link>
                     </div>
                 ) : (
                     <div className='d-flex'>
