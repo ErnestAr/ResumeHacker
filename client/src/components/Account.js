@@ -6,9 +6,9 @@ export default function Account(){
 
 
     return (
-        <main className=" col-9 wm">
-            <DeleteUser/>
+        <main className=" col-9 wm ">
             <UpdateUser/>
+            <DeleteUser/>
         </main>
     )
 }
