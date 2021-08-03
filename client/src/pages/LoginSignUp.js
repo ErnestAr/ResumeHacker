@@ -72,7 +72,6 @@ function LoginSignUp() {
       };
 
 
-
     return (
       <section className='container'>
         <br></br>
