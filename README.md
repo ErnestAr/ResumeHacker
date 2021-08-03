@@ -6,6 +6,7 @@ Resume Hacker is an application that assists those who are interested in creatin
 
 ## Link to deployed application: 
 
+https://resumehacker.herokuapp.com/
 
 
 ## Motivation
