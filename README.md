@@ -25,6 +25,7 @@ The motivation behind this project is to assist the user in creating their perso
 * Express-Sessions
 * Mongoose
 * Bcrypt
+* GraphQl
 
 
 ## User Story
