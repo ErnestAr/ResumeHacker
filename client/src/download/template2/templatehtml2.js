@@ -93,7 +93,7 @@ export default function htmlTemp1(data) {
                 
                 <section class="experience section-padding">
                     <div class="container">
-                        <h3 class="experience-title">Experience</h3>
+                        <h3 class="experience-title">Personal Projects</h3>
                     
                     <div class="experience-wrapper">
                         <div class="company-wrapper clearfix">

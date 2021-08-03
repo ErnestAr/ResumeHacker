@@ -524,7 +524,7 @@ export default class ResumeForm extends React.Component {
         </div>
         <div className="card">
           <form className="form-card">
-            <h3 className=" col-4 my-2 ">Educatoin</h3>
+            <h3 className=" col-4 my-2 ">Education</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
                 
