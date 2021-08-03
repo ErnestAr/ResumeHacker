@@ -57,7 +57,7 @@ export default function UpdateUser() {
     // console.log("-------------------------------------")
     // console.log(data);
     return (
-        <div>
+        <main className=" col-9 p-1">
             {loading ? (
             <div>Loading...</div>
           ):(
@@ -99,6 +99,6 @@ export default function UpdateUser() {
                 </div>
              )};  
 
-        </div>       
+        </main>       
     )
 }

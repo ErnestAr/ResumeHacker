@@ -1,10 +1,9 @@
-
 import React, { useRef } from "react";
 import "../pages/Dashboard/dashboard.css";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
-import htmlTemp from "../download/template1/templatehtml1";
-import cssTemp from "../download/template1/templatecss1";
+import htmlTemp1 from "../download/template2/templatehtml2";
+import cssTemp1 from "../download/template2/templatecss2";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -20,7 +19,6 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
 
 const zip = new JSZip();
 const fs = require("fs");
@@ -75,22 +73,19 @@ export default class ResumeForm extends React.Component {
     github: "",
     linkedin: "",
     facebook: "",
-    company1: "",
-    company2: "",
-    company3: "",
-    startdate1: "",
-    startdate2: "",
-    startdate3: "",
-    enddate1: "",
-    enddate2: "",
-    enddate3: "",
+    project1: "",
+    project2: "",
+    project3: "",
+    projectlink1: "",
+    projectlink2: "",
+    projectlink3: "",
     description1: "",
     description2: "",
     description3: "",
-    position1: "",
-    position2: "",
-    position3: "",
     hobbies: "",
+    school: "",
+    program: "",
+    schooldate: "",
     number: 0,
     files: [],
     skills: [],
@@ -121,7 +116,6 @@ export default class ResumeForm extends React.Component {
       currentLevel: evt.target.value,
     });
   };
-
   // style for the form
   useStyles = makeStyles((theme) => ({
     root: {
@@ -140,8 +134,8 @@ export default class ResumeForm extends React.Component {
 
   // create zip file and initialize download
   createzip = () => {
-    zip.file("index.html", htmlTemp(this.state));
-    zip.file("style.css", cssTemp(this.state.skills));
+    zip.file("index.html", htmlTemp1(this.state));
+    zip.file("style.css", cssTemp1(this.state.skills));
     // add image from files state to zip
     this.state.files.forEach((file) => {
       zip.file(file.name, file.data);
@@ -180,6 +174,7 @@ export default class ResumeForm extends React.Component {
             <h3 className=" col-3 my-2 ">General Information</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
+                
                 <label className="form-control-label px-3">
                   First name<span className="text-danger"> *</span>
                 </label>
@@ -330,16 +325,16 @@ export default class ResumeForm extends React.Component {
         </div>
         <div className="card">
           <form className="form-card">
-            <h3 className=" col-3 my-2 ">Work Experience</h3>
+            <h3 className=" col-3 my-2 ">Projects</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Company Name<span className="text-danger"> *</span>
+                  Project Title<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
-                  name="company1"
+                  name="project1"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -347,7 +342,7 @@ export default class ResumeForm extends React.Component {
               <div className="form-group col-sm-6 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Position<span className="text-danger"> *</span>
+                  Project Repository/Link<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
@@ -361,7 +356,7 @@ export default class ResumeForm extends React.Component {
               <div className="form-group col-12 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Position Description<span className="text-danger"> *</span>
+                  Project Description<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
@@ -371,28 +366,46 @@ export default class ResumeForm extends React.Component {
                 />
               </div>
             </div>
+          </form>
+        </div>
+        <div className="card">
+          <form className="form-card">
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Start date<span className="text-danger"> *</span>
+                  Project Title<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
-                  name="startdate1"
-                  placeholder="Nov-2019"
+                  name="project1"
+                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  End Date<span className="text-danger"> *</span>
+                  Project Repository/Link<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
-                  name="enddate1"
-                  placeholder="Oct-2020"
+                  name="position1"
+                  placeholder=""
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="row justify-content-between text-left">
+              <div className="form-group col-12 flex-column d-flex">
+                
+                <label className="form-control-label px-3">
+                  Project Description<span className="text-danger"> *</span>
+                </label>
+                <input
+                  type="text"
+                  name="description1"
+                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
@@ -405,11 +418,11 @@ export default class ResumeForm extends React.Component {
               <div className="form-group col-sm-6 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Company Name<span className="text-danger"> *</span>
+                  Project Title<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
-                  name="company2"
+                  name="project1"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -417,81 +430,11 @@ export default class ResumeForm extends React.Component {
               <div className="form-group col-sm-6 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Position<span className="text-danger"> *</span>
+                  Project Repository/Link<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
-                  name="position2"
-                  placeholder=""
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position Description<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="description2"
-                  placeholder=""
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Start date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="startdate2"
-                  placeholder="Nov-2019"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  End Date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="enddate3"
-                  placeholder="Oct-2020"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className="card">
-          <form className="form-card">
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Company Name<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="company3"
-                  placeholder=""
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="position3"
+                  name="position1"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -501,38 +444,12 @@ export default class ResumeForm extends React.Component {
               <div className="form-group col-12 flex-column d-flex">
                 
                 <label className="form-control-label px-3">
-                  Position Description<span className="text-danger"> *</span>
+                  Project Description<span className="text-danger"> *</span>
                 </label>
                 <input
                   type="text"
-                  name="description3"
+                  name="description1"
                   placeholder=""
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Start date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="startdate3"
-                  placeholder="Nov-2019"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  End Date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  name="enddate3"
-                  placeholder="Oct-2020"
                   onChange={this.handleChange}
                 />
               </div>
@@ -561,6 +478,7 @@ export default class ResumeForm extends React.Component {
                   />
                 ))
               }
+              // onChange={this.handleChange(value)}
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -603,6 +521,51 @@ export default class ResumeForm extends React.Component {
               </DialogActions>
             </Dialog>
           </div>
+        </div>
+        <div className="card">
+          <form className="form-card">
+            <h3 className=" col-4 my-2 ">Educatoin</h3>
+            <div className="row justify-content-between text-left">
+              <div className="form-group col-sm-6 flex-column d-flex">
+                
+                <label className="form-control-label px-3">
+                  School/Bootcamp<span className="text-danger"> *</span>
+                </label>
+                <input
+                  type="text"
+                  name="project1"
+                  placeholder=""
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group col-sm-6 flex-column d-flex">
+                
+                <label className="form-control-label px-3">
+                  Start and End year<span className="text-danger"> *</span>
+                </label>
+                <input
+                  type="text"
+                  name="position1"
+                  placeholder=""
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="row justify-content-between text-left">
+              <div className="form-group col-12 flex-column d-flex">
+                
+                <label className="form-control-label px-3">
+                  Program description <span className="text-danger"> *</span>
+                </label>
+                <input
+                  type="text"
+                  name="hobbies"
+                  placeholder=""
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+          </form>
         </div>
         <div className="card">
           <form className="form-card">
