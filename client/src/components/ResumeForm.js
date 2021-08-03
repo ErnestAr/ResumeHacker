@@ -144,7 +144,7 @@ export default class ResumeForm extends React.Component {
     zip.file("style.css", cssTemp(this.state.skills));
     // add image from files state to zip
     this.state.files.forEach((file) => {
-      zip.file(file.name, file.data);
+      zip.file(file.name, file);
     });
     zip.generateAsync({ type: "blob" }).then(
       function (blob) {

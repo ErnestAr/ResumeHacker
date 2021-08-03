@@ -78,21 +78,20 @@ function LoginSignUp() {
         <br></br>
         <br></br>
         <br></br>
-        <div style={{position:'absolute', left:'26vw', height:'100vh', width:'100vw', opacity:'0.3', backgroundImage:`url('https://www.greatsampleresume.com/wp-content/themes/resumebaking/img/ats.svg')`, backgroundRepeat:'no-repeat'}}></div>
-        <div className='row justify-content-center'>
-
+        <div style={{position:'absolute', left:'16vw', height:'100vh', width:'200vw', opacity:'0.3', backgroundImage:`url('https://www.greatsampleresume.com/wp-content/themes/resumebaking/img/ats.svg')`, backgroundRepeat:'no-repeat'}}></div>
+        <div className='row justify-content-around'>
           <div className='col-3'>
           <p style={{color:'#3A7CA5', fontWeight:'bold', fontSize:'4em'}}> Sign<span style={{fontStyle:'italic', color:'#16425B'}}>In</span> </p>
             {logindata ? (
               <Redirect to="/Dashboard"/>
             ) : (
-              <div className='card' >
+              <div className='card ' >
                   <label style={{color:'white'}}>Username</label>
                   <input onChange={LoginChange} name="userName" type="text" value={loginState.userName}></input>
                   <br></br>
                   <label style={{color:'white'}}>Password</label>
                   <input onChange={LoginChange} name="password" type="password" value={loginState.password}></input>       
-                  <Fab className= " mt-2 me-5"  style={{width: "225px"}} variant="extended"  type="submit" onClick = {LoginUser}  >
+                  <Fab className= " mt-2 me-5"  style={{width: "225px" }} variant="extended"  type="submit" onClick = {LoginUser}  >
                       Sign up
                   </Fab>
               </div>
