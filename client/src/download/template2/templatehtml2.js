@@ -135,7 +135,6 @@ export default function htmlTemp1(data) {
                         <h3 class="section-title">Skills</h3> 
                             <ul>
                                ${addSkill(data.skills)}
-                            
                             </ul>
                         
                     </div>

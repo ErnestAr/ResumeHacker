@@ -346,7 +346,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="projectlink1"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -378,7 +378,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="project1"
+                  name="project2"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -390,7 +390,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="projectlink2"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -404,7 +404,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="description1"
+                  name="description2"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -422,7 +422,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="project1"
+                  name="project3"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -434,7 +434,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="projectlink3"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -448,7 +448,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="description1"
+                  name="description3"
                   placeholder=""
                   onChange={this.handleChange}
                 />
