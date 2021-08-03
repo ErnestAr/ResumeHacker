@@ -37,6 +37,12 @@ The motivation behind this project is to assist the user in creating their perso
 The user can initially sign up for an account, and can login afterwards. Once the user is signed in, they can create their personal resume by answering multiple questions
 
 
+<img src = "Images/homepage.PNG">
+<img src = "Images/Temeplate.PNG">
+<img src = "Images/middle.PNG">
+<img src = "Images/top.PNG">
+
+
 
 
 ## Contributors
@@ -44,7 +50,6 @@ The user can initially sign up for an account, and can login afterwards. Once th
 Contributors to this project includes:
  Ernest Arutiunian, Ahmad Mujeeb, Jugraj Nijjar
 
-<img src = "Images/homepage.PNG">
 
 
 ## Contact Information
