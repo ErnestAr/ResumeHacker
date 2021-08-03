@@ -1,4 +1,4 @@
-export default function cssTemp(data) {
+export default function cssTemp1(data) {
     // loop through  value from the data object
     const itRates = (data) => {
         let cssValue = '';

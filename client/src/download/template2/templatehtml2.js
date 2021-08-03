@@ -1,4 +1,4 @@
-export default function htmlTemp(data) {
+export default function htmlTemp1(data) {
         const addSkill = (data) => {
             let skillLi = '';
         for (let key in data) {
@@ -97,38 +97,35 @@ export default function htmlTemp(data) {
                     
                     <div class="experience-wrapper">
                         <div class="company-wrapper clearfix">
-                            <div class="experience-title">${data.company1}</div> 
-                        <div class="time">${data.startdate1} - ${data.enddate1}</div> 
+                            <a href="${data.projectlink1}">${data.projectlink1}</a>
                         </div>
                         
                         <div class="job-wrapper clearfix">
-                            <div class="experience-title">${data.position1} </div> 
+                            <div class="experience-title">${data.project1}</div> 
                         <div class="company-description">
                             <p>${data.description1}</p>
                         </div>
                         </div>
                         
                         <div class="company-wrapper clearfix">
-                            <div class="experience-title">${data.company2}</div> 
-                        <div class="time">${data.startdate2} - ${data.enddate2}</div>
+                            <a href="${data.projectlink2}">${data.projectlink2}</a>
                         </div>
                         
                         <div class="job-wrapper clearfix">
-                            <div class="experience-title">${data.position2}</div> 
+                            <div class="experience-title">${data.project2}</div> 
                         <div class="company-description">
-                            <p>${data.description2}</p> 
+                            <p>${data.description2}</p>
                         </div>
                         </div>
                         
                         <div class="company-wrapper clearfix">
-                            <div class="experience-title">${data.company3}</div> 
-                        <div class="time">${data.startdate3} - ${data.enddate3}</div> 
-                        </div> 
+                            <a href="${data.projectlink3}">${data.projectlink3}</a>
+                        </div>
                         
                         <div class="job-wrapper clearfix">
-                            <div class="experience-title">${data.position3}</div> 
+                            <div class="experience-title">${data.project3}</div> 
                         <div class="company-description">
-                            <p>${data.description3}</p>  
+                            <p>${data.description3}</p>
                         </div>
                         </div>
                         
@@ -146,12 +143,14 @@ export default function htmlTemp(data) {
                     <div class="section-wrapper clearfix">
                         <h3 class="section-title">Hobbies</h3>  
                         <p>${data.hobbies}</p>
-
                     </div>
-                    
+                    <div class="section-wrapper clearfix">
+                        <h3 class="section-title">Education</h3> 
+                        <div class="experience-title">${data.school}<span style="color: #9099a0;">${data.schooldate}  </span> </div> 
+                        <p>${data.program} </p>
+                    </div>
                     </div>
                 </section>
-                
                 <div class="clearfix"></div>
                 </div>
                 <script src="index.js"></script>
