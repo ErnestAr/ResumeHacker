@@ -280,7 +280,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="git"
+                  name="github"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -296,7 +296,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="linkin"
+                  name="linkedin"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -533,7 +533,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="project1"
+                  name="school"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -545,7 +545,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="position1"
+                  name="schooldate"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -559,7 +559,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="hobbies"
+                  name="program"
                   placeholder=""
                   onChange={this.handleChange}
                 />
