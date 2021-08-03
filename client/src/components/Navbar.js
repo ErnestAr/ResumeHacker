@@ -22,26 +22,26 @@ function TheNavbar() {
     
     return (
         <Navbar>
-            <Container >
-                <Nav className="me-auto d-flex justify-content-end" style={{width:'100vw'}}>
+           
+                <Nav className="me-auto d-flex justify-content-end mb-4" style={{width:'100vw'}}>
                 {Auth.loggedIn() ? (
-
+ 
                     <div className='d-flex'>
-                        <Link className='navbar-link mt-2' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
-                        <Link className='navbar-link mt-2' to="/Dashboard"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
-                        <Link className='navbar-link mt-2' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
-                        <button className="btn btn-lg btn-primary m-2 navBtn" onClick={logout}>Logout</button>
+                        <Link className='navbar-link mt-2 mx-3' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
+                        <Link className='navbar-link mt-2  mx-3' to="/Dashboard"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
+                        <Link className='navbar-link mt-2  mx-3' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
+                        <Link className='navbar-link mt-2  mx-3' to="" onClick={logout}><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Logout</span></Link>
                     </div>
                 ) : (
-                    <div className='d-flex flex-row'>
-                        <Link className='navbar-link' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
-                        <Link className='navbar-link' to="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
-                        <Link className='navbar-link' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
-                        <Link className='navbar-link' to="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Login/Signup</span></Link>
+                    <div className='d-flex'>
+                        <Link className='navbar-link mt-2 mx-3' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
+                        <Link className='navbar-link mt-2 mx-3' to="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
+                        <Link className='navbar-link mt-2 mx-3' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
+                        <Link className='navbar-link mt-2 mx-3' to="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Login/Signup</span></Link>
                     </div>
                 )}      
                 </Nav>
-            </Container>
+            
         </Navbar>
 
     );
