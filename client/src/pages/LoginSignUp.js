@@ -92,7 +92,7 @@ function LoginSignUp() {
                   <label style={{color:'white'}}>Password</label>
                   <input onChange={LoginChange} name="password" type="password" value={loginState.password}></input>       
                   <Fab className= " mt-2 me-5"  style={{width: "225px" }} variant="extended"  type="submit" onClick = {LoginUser}  >
-                      Sign up
+                      Log in
                   </Fab>
               </div>
             )}
