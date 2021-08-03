@@ -54,7 +54,7 @@ export default function Homepage() {
                         <h3 style={{color:'#3A7CA5'}}>Join top Developer Programs from IronHack, App Academy and General Assembly and more!</h3>
                         <h4 style={{color:'#3A7CA5'}}>Get Certificates in Web Devleopment, Fintech, Data Analytics, UI/UX, Cyber Security, Machine Learning.</h4>
                         <div className="row justify-content-around">
-                            <div className="col-md-4 col-sm-4 "><img className='resource-images'src='/ironhack.PNG' style={{height:'25.5vh'}}></img> </div>
+                            <div className="col-md-4 col-sm-4 "><img className='resource-images'src='/Ironhack.PNG' style={{height:'25.5vh'}}></img> </div>
                             <div className="col-md-4 col-sm-4 "><img className='resource-images'src='/appAcademy.PNG'style={{height:'25.5vh'}}></img></div>
                             <div className="col-md-4 col-sm-4 "><img className='resource-images'src='/GeneralAssembly.PNG'style={{height:'25.5vh'}}></img></div>
                         </div>
