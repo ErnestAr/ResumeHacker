@@ -7,7 +7,7 @@ export default function About() {
             <div className='container fluid' >
                 <div className='row align-items-center' style={{height:'50vh'}}>
                     <div className='col'><p className='fw-bold' style={{color:'#3A7CA5', fontSize:'4em'}}>About<span className='fst-italic' style={{color:'#16425B'}}>Us</span></p></div>
-                    <div className='col'><p style={{color:'#3A7CA5', fontSize:'1.5em'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></div>
+                    <div className='col'><p style={{color:'#3A7CA5', fontSize:'1.5em'}}>"We are a group of full stack software developers based out of Toronto Canada. Our mission to create this resume building app was realized as we felt that this niche part of the industry lacked a reliable streamlined tool to make it easier to for both experienced and aspiring tech/it professionals to have a fine tuned resume."</p></div>
                 </div>
             </div>
 

@@ -2,7 +2,9 @@
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
+import Auth from '../utils/auth';
 import '../App.css'
+
 
 
 import { Swiper, SwiperSlide} from 'swiper/react';
@@ -31,7 +33,12 @@ export default function Homepage() {
                             <br></br>
                             <p style={{fontSize:'1.5em', color:'#3A7CA5', fontWeight:'bold', fontStyle:'italic'}}>Resume building application catered to software developers and IT personal for the tech industry.</p>
                             <div>
-                                <Button variant="info" size="lg">Get Started</Button>
+                            {Auth.loggedIn() ? (
+                                
+                                <a href='/Dashboard'><Button variant="info" size="lg">Get Started</Button></a>
+                                ) : (
+                                    <a href='/LoginSignUp'><Button variant="info" size="lg">Get Started</Button></a>
+                                )}
                             </div>
                         </div>
                         <div  className='col d-flex  justify-content-center'>
