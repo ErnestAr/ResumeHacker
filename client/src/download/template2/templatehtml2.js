@@ -78,9 +78,9 @@ export default function htmlTemp1(data) {
                     </div>
                     <div class="contact-social clearfix">
                         <ul class="list-titles">
-                            <li>${data.github}</li>
-                            <li>${data.linkedin}</li>
-                            <li>${data.facebook}</li>
+                            <li>GitHub</li>
+                            <li>LinkedIn</li>
+                            <li>Facebook</li>
                         </ul>
                         <ul class="list-content"> 
                             <li><a href="${data.github}">${data.github}</a></li>

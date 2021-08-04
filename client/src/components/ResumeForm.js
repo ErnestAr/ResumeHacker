@@ -22,6 +22,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 
+
 const zip = new JSZip();
 const fs = require("fs");
 
@@ -121,7 +122,6 @@ export default class ResumeForm extends React.Component {
       currentLevel: evt.target.value,
     });
   };
-
   // style for the form
   useStyles = makeStyles((theme) => ({
     root: {
@@ -131,13 +131,10 @@ export default class ResumeForm extends React.Component {
       },
     },
   }));
-
   classes = this.useStyles;
-
   // save values to userInput
   handleChange = ({ target: { value, name } }) =>
     this.setState({ [name]: value });
-
   // create zip file and initialize download
   createzip = () => {
     zip.file("index.html", htmlTemp(this.state));
@@ -159,19 +156,16 @@ export default class ResumeForm extends React.Component {
   nextPath(path) {
     this.props.history.push(path);
   }
-
   //   change rating for skill
   changeNumber = (event) => {
     this.setState({ number: event.target.value });
   };
-
   // dropdondown handle Change
   handleDrop(files) {
     this.setState({
       files: files,
     });
   }
-
   render() {
     return (
       <main className=" col-9 p-1">
@@ -275,9 +269,7 @@ export default class ResumeForm extends React.Component {
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
                 <label className="form-control-label px-3">
-                  
                   <FaGithub
                     size={30}
                     style={{ color: "#3A7CA5" }}
@@ -607,7 +599,6 @@ export default class ResumeForm extends React.Component {
         <div className="card">
           <form className="form-card">
             <h3 className=" col-4 my-2 ">Non-work related activities</h3>
-
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
                 
