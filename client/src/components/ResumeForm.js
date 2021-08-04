@@ -312,7 +312,7 @@ export default class ResumeForm extends React.Component {
                 
                 <label className="form-control-label px-3">
                   <FaFacebook size={30} style={{ color: "#3A7CA5" }} /> Facebook
-                  <span className="text-danger"> *</span>
+                  <span className="text-danger"> </span>
                 </label>
                 <input
                   type="text"
