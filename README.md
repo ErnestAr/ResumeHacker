@@ -19,7 +19,8 @@ https://resumehacker.herokuapp.com/
 
 ## Screenshots:
 
-<img src = "Images/homepage.PNG">
+![image](https://user-images.githubusercontent.com/82740498/128244244-4a314802-b068-406c-b316-61509bbb65d0.png)
+![image](https://user-images.githubusercontent.com/82740498/128244296-b5106c81-3745-49f8-a695-2525217f7a2d.png)
 <img src = "Images/Temeplate.PNG">
 <img src = "Images/middle.PNG">
 <img src = "Images/top.PNG">
