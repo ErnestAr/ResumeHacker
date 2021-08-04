@@ -51,6 +51,7 @@ The user can initially sign up for an account, and can login afterwards. Once th
 
 Contributors to this project includes:
  Ernest Arutiunian, Ahmad Mujeeb, Jugraj Nijjar
+ Resume template: https://twitter.com/mariosmaselli
 
 
 
