@@ -281,11 +281,11 @@ export default class ResumeForm extends React.Component {
                   <FaGithub
                     size={30}
                     style={{ color: "#3A7CA5" }}
-                  /> Github <span className="text-danger"> *</span>
+                  /> Github <span className="text-danger"> </span>
                 </label>
                 <input
                   type="text"
-                  name="git"
+                  name="github"
                   placeholder=""
                   onChange={this.handleChange}
                 />
@@ -297,11 +297,11 @@ export default class ResumeForm extends React.Component {
                 <label className="form-control-label px-3">
                   
                   <FaLinkedin size={30} style={{ color: "#3A7CA5" }} /> LinkedIn
-                  <span className="text-danger"> *</span>
+                  <span className="text-danger"> </span>
                 </label>
                 <input
                   type="text"
-                  name="linkin"
+                  name="linkedin"
                   placeholder=""
                   onChange={this.handleChange}
                 />

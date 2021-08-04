@@ -46,7 +46,6 @@ export default function Homepage() {
                         </div>
                     </section>
                 </SwiperSlide>
-
                 {/* SLIDE 2:-------- RESOURCES FOR TOP BOOTCAMP PROGRAM CERTIFICATES */}
                 <SwiperSlide>
                     <section className='container d-flex flex-column my-5 py-5'>
@@ -87,8 +86,6 @@ export default function Homepage() {
                     </section>
                 </SwiperSlide>
             </Swiper>
-        
-        
     )
 }
 
