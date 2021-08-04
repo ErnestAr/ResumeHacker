@@ -461,7 +461,7 @@ export default class ResumeForm extends React.Component {
                 </label>
                 <input
                   type="text"
-                  name="enddate3"
+                  name="enddate2"
                   placeholder="Oct-2020"
                   onChange={this.handleChange}
                 />
