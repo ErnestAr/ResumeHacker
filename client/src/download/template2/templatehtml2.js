@@ -145,7 +145,7 @@ export default function htmlTemp1(data) {
                     </div>
                     <div class="section-wrapper clearfix">
                         <h3 class="section-title">Education</h3> 
-                        <div class="experience-title">${data.school}<span style="color: #9099a0;">${data.schooldate}  </span> </div> 
+                        <div class="experience-title">${data.school}<span style="color: #9099a0;">  ${data.schooldate}  </span> </div> 
                         <p>${data.program} </p>
                     </div>
                     </div>

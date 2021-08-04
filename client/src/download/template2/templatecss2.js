@@ -6,14 +6,18 @@ export default function cssTemp1(data) {
     for (let key in data) {
         let value = data[key];
         let newCss = 
-                        ` @keyframes skill_${count} {
-                            from {
-                                width: 0%;
-                        }
-                            to {
-                                width: ${value}0%;
-                        }
-                        }`
+                    ` .section-wrapper .skill-percentage:nth-child(${count})::before {
+                        width: ${value}0%;
+                        animation: skill_1 0.6s ease;
+                    }
+                    @keyframes skill_${count} {
+                        from {
+                            width: 0%;
+                    }
+                        to {
+                            width: ${value}0%;
+                    }
+                    }`
         cssValue += newCss;
         count++;
         }
@@ -317,34 +321,6 @@ export default function cssTemp1(data) {
                             position: absolute;
                             margin-top: 3px;
                             bottom: 0;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(1)::before {
-                            width: 80%;
-                            animation: skill_1 0.6s ease;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(2)::before {
-                            width: 90%;
-                            animation: skill_2 0.6s ease;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(3)::before {
-                            width: 50%;
-                            animation: skill_3 0.6s ease;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(4)::before {
-                            width: 60%;
-                            animation: skill_4 0.6s ease;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(5)::before {
-                            width: 70%;
-                            animation: skill_5 0.6s ease;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(6)::before {
-                            width: 70%;
-                            animation: skill_6 0.6s ease;
-                        }
-                        .section-wrapper .skill-percentage:nth-child(7)::before {
-                            width: 70%;
-                            animation: skill_6 0.6s ease;
                         }
                         ${itRates(data)}
                         
