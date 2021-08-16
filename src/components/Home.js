@@ -2,7 +2,6 @@
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
-import Auth from '../utils/auth';
 import '../App.css'
 
 
@@ -24,7 +23,6 @@ SwiperCore.use([Navigation]);
 export default function Homepage() {
     return(
             <Swiper navigation={true} className="mySwiper">
-
                 {/* MAIN LANDING PAGE SLIDE 1:--------  APPLICATION HEADING AND BRIEF DESCRIPTION */}
                 <SwiperSlide>
                     <section className='d-flex'>
@@ -32,14 +30,7 @@ export default function Homepage() {
                             <p style={{color:'#3A7CA5', fontWeight:'bold', fontSize:'4em'}}> Resume<span style={{fontStyle:'italic', color:'#16425B'}}>Hacker</span> </p>
                             <br></br>
                             <p style={{fontSize:'1.5em', color:'#3A7CA5', fontWeight:'bold', fontStyle:'italic'}}>Resume building application catered to software developers and IT personal for the tech industry.</p>
-                            <div>
-                            {Auth.loggedIn() ? (
-                                
-                                <a href='/Dashboard'><Button variant="info" size="lg">Get Started</Button></a>
-                                ) : (
-                                    <a href='/LoginSignUp'><Button variant="info" size="lg">Get Started</Button></a>
-                                )}
-                            </div>
+                        
                         </div>
                         <div  className='col d-flex  justify-content-center'>
                             <Image src='/resumepic.jpg'  style={{height:'80vh', width:'37vw'}} fluid />

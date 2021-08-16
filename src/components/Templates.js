@@ -16,7 +16,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import {BsCircleFill} from 'react-icons/bs';
 import {VscTasklist} from 'react-icons/vsc'
-// onClick={handleClick}
 
 const useStyles = makeStyles({
   root: {
