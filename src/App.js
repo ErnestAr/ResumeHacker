@@ -1,0 +1,32 @@
+import React from "react"
+import SignUp from "./components/SignUp"
+import { AuthProvider } from "./contexts/AuthContext"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Dashboard from "./components/Dashboard"
+import Login from "./components/Login"
+import Navbar from "./components/Navbar"
+import PrivateRoute from "./components/PrivateRoute"
+import ForgotPassword from "./components/ForgotPassword"
+import About from "./components/About"
+// import UpdateProfile from "./UpdateProfile"
+
+function App() {
+  return (
+    <>
+        <Router>
+          <AuthProvider>
+            <Navbar />
+            <Switch>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/about" component={About} />
+            </Switch>
+          </AuthProvider>
+        </Router>
+        </>
+  )
+}
+
+export default App
