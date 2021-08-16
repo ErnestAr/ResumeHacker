@@ -1,46 +1,85 @@
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'
-import {Link} from 'react-router-dom';
-import Auth from '../utils/auth';
-import { QUERY_ME } from '../utils/queries';
-import { useQuery } from '@apollo/client';
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import MenuIcon from '@material-ui/icons/Menu';
+import { useAuth } from "../contexts/AuthContext"
+import { useHistory } from "react-router-dom"
 
 
-const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
+const useStyles = makeStyles(theme => ({
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  loginButton: {
+      border: "1px solid white",
+      borderRadius: "5px",
+  },
+}));
+
+ 
+export default function Navbar () {
+    const [error, setError] = useState("")
+    const currentUser  = useAuth()
+    const history = useHistory()
+    const classes = useStyles();
+    const {logout} = useAuth()
+
+    async function handleLogout(event) {
+        event.preventDefault();
+        try {
+          console.log(currentUser)
+          setError("");
+          await logout();
+          history.push("/login")
+        } catch (error)   {
+          setError(error.message);
+          console.log(error.message);
+        }
+      }
+
+      function handleLogin() {
+        history.push("/login");
     };
 
+    function handleHome() {
+        history.push("/");
+    }
+    function handleDashboard() {
+        history.push("/dashboard");
+    }
 
-function TheNavbar() {
-    
     return (
-        <Navbar>
-                <Nav className="me-auto d-flex justify-content-end mb-4" style={{width:'100vw'}}>
-                {Auth.loggedIn() ? (
-                    <div className='d-flex'>
-                        <Link className='navbar-link mt-2 mx-3' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
-                        <Link className='navbar-link mt-2  mx-3' to="/Dashboard"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
-                        <Link className='navbar-link mt-2  mx-3' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
-                        <Link className='navbar-link mt-2  mx-3' to="" onClick={logout} ><span className='nav-text' style={{color:'#0A2239', fontSize:'1.5em'}}>Logout</span></Link>
-                    </div>
-                ) : (
-                    <div className='d-flex'>
-                        <Link className='navbar-link mt-2 mx-3' to="/"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Home</span></Link>
-                        <Link className='navbar-link mt-2 mx-3' to="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Dashboard</span></Link>
-                        <Link className='navbar-link mt-2 mx-3' to="/About"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>About</span></Link>
-                        <Link className='navbar-link mt-2 mx-3' to="/LoginSignUp"><span className='nav-text' style={{color:'#3A7CA5', fontSize:'1.5em'}}>Login/Signup</span></Link>
-                    </div>
-                )}      
-                </Nav>
-            
-        </Navbar>
-
+        <AppBar position="static">
+        <Toolbar>
+            <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            className={classes.menuButton}
+            >
+            <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+            ResumeHacker
+            </Typography>
+            <Button color="inherit" onClick={handleHome}>Home</Button>
+            <Button color="inherit" onClick={handleDashboard}>Dashboard</Button>
+            {currentUser.currentUser ?
+            <Button className={classes.loginButton} color="inherit" onClick={handleLogout}>
+            Logout
+            </Button> :
+            <Button className={classes.loginButton}  color="inherit" onClick={handleLogin}>
+            Login
+            </Button>
+            }
+        </Toolbar>
+        </AppBar>
     );
-}
-
-export default TheNavbar;
+};

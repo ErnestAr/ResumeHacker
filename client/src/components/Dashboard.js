@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 
 import "./dashboard.css"
 import { Route } from 'react-router-dom';
-import Templates from "../../components/Templates"
-import ResumeForm from '../../components/ResumeForm';
-import ResumeFormBlue from '../../components/ResumeFormBlue';
+import Templates from "./Templates"
+import ResumeForm from './ResumeForm';
+import ResumeFormBlue from './ResumeFormBlue';
 
-import UserInterface from '../../components/UserInterface';
-import Account from '../../components/Account';
+import UserInterface from './UserInterface';
+import Account from './Account';
 
 
 class Dashboard extends Component {
