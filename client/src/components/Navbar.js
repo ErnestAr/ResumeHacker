@@ -10,12 +10,10 @@ import { QUERY_ME } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 
 
-
-
 const logout = (event) => {
     event.preventDefault();
     Auth.logout();
-  };
+    };
 
 
 function TheNavbar() {
