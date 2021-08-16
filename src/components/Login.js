@@ -82,8 +82,6 @@ export default function Login() {
         setLoading(false);
       }
     
-
-
     function handleClick() {
         history.push("/signup");
     };
