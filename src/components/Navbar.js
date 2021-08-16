@@ -10,6 +10,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
 
 
+
 const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2),
@@ -21,9 +22,12 @@ const useStyles = makeStyles(theme => ({
       border: "1px solid white",
       borderRadius: "5px",
   },
+  colormain: {
+    backgroundColor: "#3A7CA5",
+  }
 }));
 
- 
+
 export default function Navbar () {
     const [error, setError] = useState("")
     const currentUser  = useAuth()
@@ -51,12 +55,17 @@ export default function Navbar () {
     function handleHome() {
         history.push("/");
     }
+
     function handleDashboard() {
         history.push("/dashboard");
     }
 
+    function handleAbout() {
+      history.push("/about");
+  }
+
     return (
-        <AppBar position="static">
+        <AppBar position="static" className={classes.colormain}>
         <Toolbar>
             <IconButton
             edge="start"
@@ -71,6 +80,7 @@ export default function Navbar () {
             </Typography>
             <Button color="inherit" onClick={handleHome}>Home</Button>
             <Button color="inherit" onClick={handleDashboard}>Dashboard</Button>
+            <Button color="inherit" onClick={handleAbout}>About</Button>
             {currentUser.currentUser ?
             <Button className={classes.loginButton} color="inherit" onClick={handleLogout}>
             Logout

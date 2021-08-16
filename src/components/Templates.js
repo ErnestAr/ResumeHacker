@@ -58,7 +58,7 @@ export default function Templates() {
 
   const classes = useStyles();
     return (
-              <main className=" col-9 wm">
+              <main className=" col-9 wm text-color">
                 <section className="  row p-2 pb-3  card ">
                 <h2 className="p-1 ps-3">Starter guide  <VscTasklist size={40}/> </h2>
                 <h5 className="p-1 ps-3" style={{color: "grey"}}>This guide will assist you in creating  modern, interactive and responcive Developer Resume. </h5>
@@ -86,7 +86,7 @@ export default function Templates() {
                   <h2 className=" ps-2 ">Select Template</h2>
                   <Divider/>
                 <Grid container spacing={3} className="mt-2">
-                  <Grid item xs={6} className="" >
+                  <Grid item xs={6} className="text-color" >
                     <Card className={classes.root}>
                       <CardActionArea>
                         <CardMedia
@@ -95,7 +95,7 @@ export default function Templates() {
                           title="Contemplative Reptile"
                         />
                         <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
+                          <Typography gutterBottom variant="h5" component="h2" className="text-color">
                             Software Developer <BsCircleFill className={classes.green}/> <BsCircleFill className={classes.dark}/>
                           </Typography>
                           <Typography variant="body2" color="textSecondary" component="p">
@@ -120,7 +120,7 @@ export default function Templates() {
                             title="Contemplative Reptile"
                           />
                           <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
+                            <Typography gutterBottom variant="h5" component="h2" className="text-color">
                               Software Developer (Entry Level) <BsCircleFill className={classes.blue}/>  <BsCircleFill className={classes.dark}/>
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">

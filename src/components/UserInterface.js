@@ -10,7 +10,7 @@ export default function UserInterface() {
         history.push("/dashboard/updatedelete");
     };
     return (
-        <aside className="col-3 bd-highlight ">
+        <aside className="col-3 bd-highlight text-color ">
             <div  className="col-10 mt-3">
                 <h3 className="text-center  rounded ">Acoount Settings</h3> 
                 <Fab className= " mt-2 me-5"  style={{width: "295px"}} variant="extended" onClick={handleClick} >

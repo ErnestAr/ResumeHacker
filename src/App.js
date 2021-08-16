@@ -10,6 +10,7 @@ import ForgotPassword from "./components/ForgotPassword"
 import About from "./components/About"
 // import UpdateProfile from "./UpdateProfile"
 import Home from "./components/Home"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

@@ -4,6 +4,11 @@
     --tertiary: #0A2239;
 }
 
+/* make color for all text containing elements tertiary */
+.text-color {
+    color: var(--tertiary);
+}
+
 
 
 .bg-color {

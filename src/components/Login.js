@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "#0A2239"
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -46,10 +46,15 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "#3A7CA5",
+    
   },
   hover: {
     cursor: 'pointer',
   },
+  colorsecond: {
+    backgroundColor: "#0A2239"
+  }
 }));
 
 export default function Login() {
@@ -128,7 +133,8 @@ export default function Login() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
+          <Button 
+
             type="submit"
             fullWidth
             variant="contained"
@@ -139,7 +145,7 @@ export default function Login() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link  variant="body2" onClick={resetPass}>
+              <Link className={classes.hover} variant="body2" onClick={resetPass}>
                 Forgot password?
               </Link>
             </Grid>
