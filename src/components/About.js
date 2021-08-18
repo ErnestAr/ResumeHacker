@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
   text1: {
     fontSize: 80,
     paddingTop: theme.spacing(10),
-    color: '#001C55',
-    backgroundColor: "#BBDEF0",
+    color: '#3A7CA5',
+    backgroundColor: "#D6F6FF",
     textAlign: 'center',
     width: "100%",
     height: "300px",
@@ -80,12 +80,11 @@ export default function About() {
                 About us
             </Typography>
             <Typography className={classes.text2} variant="h4" component="h1" item>
-            We are a group of full stack software developers based out of Toronto Canada. Our mission to create this resume building app was realized as we felt that this niche part of the industry lacked a reliable streamlined tool to make it easier to for both experienced and aspiring tech/it professionals to have a fine tuned resume.
+            We are a group of full stack software developers based out of Toronto Canada. Our mission to create this resume building app was realized as we felt that this niche part of the industry lacked a reliable streamlined tool to make it easier to for both experienced and aspiring Tech/IT professionals to have a fine tuned resume.
             </Typography>
         </Grid>
         <Grid item lg={8} md={8} sm={12} xs={12} >
-                <iframe className={classes.map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1619902.0054433027!2d-122.68851282163044!3d37.534535608111824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1507725785789"
-                ></iframe>
+                <iframe className={classes.map} src="https://maps.google.com/maps?q=Toronto,%20Canada+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
         </Grid>
         <Grid item lg={4} md={4} sm={12} xs={12} >
             <Card className={classes.card} item>
