@@ -45,7 +45,7 @@ const useStyles = makeStyles({
 export default function Templates() {
   const history = useHistory();
   function handleClick() {
-    history.push("/dashboard/resume");
+    history.push("/resumedev");
   };
   function handleClickblue() {
     history.push("/dashboard/resumeblue");

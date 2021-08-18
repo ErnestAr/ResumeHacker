@@ -9,8 +9,8 @@ import PrivateRoute from "./components/PrivateRoute"
 import ForgotPassword from "./components/ForgotPassword"
 import About from "./components/About"
 // import UpdateProfile from "./UpdateProfile"
-import Home from "./components/Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ResumeForm from "./components/ResumeForm"
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path="/about" component={About} />
-              <Route path="/" component={Home} />
+              <Route path="/resumedev" component={ResumeForm} />
             </Switch>
           </AuthProvider>
         </Router>

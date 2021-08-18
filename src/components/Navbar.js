@@ -10,7 +10,6 @@ import { useAuth } from "../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
 
 
-
 const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2),
@@ -78,7 +77,6 @@ export default function Navbar () {
             <Typography variant="h6" className={classes.title}>
             ResumeHacker
             </Typography>
-            <Button color="inherit" onClick={handleHome}>Home</Button>
             <Button color="inherit" onClick={handleDashboard}>Dashboard</Button>
             <Button color="inherit" onClick={handleAbout}>About</Button>
             {currentUser.currentUser ?

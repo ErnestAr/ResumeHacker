@@ -1,6 +1,5 @@
-
 import React, { useRef } from "react";
-import "./dashboard.css"
+import "./dashboard.css";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import htmlTemp from "../download/template1/templatehtml1";
@@ -20,8 +19,6 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
-
 
 const zip = new JSZip();
 const fs = require("fs");
@@ -168,223 +165,152 @@ export default class ResumeForm extends React.Component {
   }
   render() {
     return (
-      <main className=" col-9 p-1">
+      <main>
         <div className="card">
           <form className="form-card">
             <h3 className=" col-3 my-2 ">General Information</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                <label className="form-control-label px-3">
-                  First name<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  id="fname"
+                <TextField
+                  id="standard-basic"
                   name="firstName"
-                  placeholder="Enter your first name"
                   onChange={this.handleChange}
+                  margin="normal"
+                  required
+                  fullWidth
+                  label="First Name"
+                  autoFocus
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Last name<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
-                  id="lname"
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  label=" Last name"
+                  autoFocus
                   name="lastName"
-                  placeholder="Enter your last name"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Address(Country, state)<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
                   id="lname"
                   name="address"
-                  placeholder="Canada, Ontario"
+                  label="Address(Country, state)"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Website/Portfolio link<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Website/Portfolio link"
                   id="lname"
                   name="website"
-                  placeholder="yourportfolio.com"
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Email<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Email"
                   id="email"
                   name="email"
-                  placeholder="example@gmail.com"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Phone number<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Phone"
                   id="mob"
                   name="cell"
-                  placeholder="888-888-8888"
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Professional Overview<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Professional Overiew"
                   name="overview"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                <label className="form-control-label px-3">
-                  <FaGithub
-                    size={30}
-                    style={{ color: "#3A7CA5" }}
-                  /> Github <span className="text-danger"> </span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  Label="GitHub"
                   name="github"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  
-                  <FaLinkedin size={30} style={{ color: "#3A7CA5" }} /> LinkedIn
-                  <span className="text-danger"> </span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  Label="Linkedin"
                   name="linkedin"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  <FaFacebook size={30} style={{ color: "#3A7CA5" }} /> Facebook
-                  <span className="text-danger"> </span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  Label="Facebook"
                   name="facebook"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
           </form>
           <label className="form-control-label px-3 my-2">
-            Upload photo or avatar image<span className="text-danger"> *</span>
+            Upload photo or avatar image
+            <DropzoneArea label="Photo" onChange={this.handleDrop.bind(this)} />
           </label>
-          <DropzoneArea onChange={this.handleDrop.bind(this)} />
         </div>
         <div className="card">
           <form className="form-card">
             <h3 className=" col-3 my-2 ">Work Experience</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Company Name<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Company"
                   name="company1"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Position"
                   name="position1"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position Description<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Description"
                   name="description1"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Start date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Start Date"
                   name="startdate1"
-                  placeholder="Nov-2019"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  End Date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="End Date"
                   name="enddate1"
-                  placeholder="Oct-2020"
                   onChange={this.handleChange}
                 />
               </div>
@@ -395,66 +321,41 @@ export default class ResumeForm extends React.Component {
           <form className="form-card">
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Company Name<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Company"
                   name="company2"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Position"
                   name="position2"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position Description<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Description"
                   name="description2"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Start date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Start Date"
                   name="startdate2"
-                  placeholder="Nov-2019"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  End Date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="End Date"
                   name="enddate2"
-                  placeholder="Oct-2020"
                   onChange={this.handleChange}
                 />
               </div>
@@ -465,66 +366,41 @@ export default class ResumeForm extends React.Component {
           <form className="form-card">
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Company Name<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Company"
                   name="company3"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Position"
                   name="position3"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Position Description<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Description"
                   name="description3"
-                  placeholder=""
                   onChange={this.handleChange}
                 />
               </div>
             </div>
             <div className="row justify-content-between text-left">
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Start date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Start Date"
                   name="startdate3"
-                  placeholder="Nov-2019"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group col-sm-6 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  End Date<span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="End Date"
                   name="enddate3"
-                  placeholder="Oct-2020"
                   onChange={this.handleChange}
                 />
               </div>
@@ -535,7 +411,6 @@ export default class ResumeForm extends React.Component {
           <div className="form-card classes" style={this.classes.root}>
             <h3 className=" col-3 my-2 "> Technical Skills</h3>
             <p className="  my-2 " style={{ color: "grey" }}>
-              
               Select technology and level of proficiency ("1" - Beginner,
               "10"-Expert).
             </p>
@@ -554,12 +429,7 @@ export default class ResumeForm extends React.Component {
                 ))
               }
               renderInput={(params) => (
-                <TextField
-                  {...params}
-                  variant="filled"
-                  label="Skills"
-                  placeholder="MongoDB, React, Vue etc."
-                />
+                <TextField {...params} variant="filled" label="Skills" />
               )}
               onChange={(event, value) => {
                 this.handleClickOpen(value);
@@ -601,14 +471,9 @@ export default class ResumeForm extends React.Component {
             <h3 className=" col-4 my-2 ">Non-work related activities</h3>
             <div className="row justify-content-between text-left">
               <div className="form-group col-12 flex-column d-flex">
-                
-                <label className="form-control-label px-3">
-                  Hobbies <span className="text-danger"> *</span>
-                </label>
-                <input
-                  type="text"
+                <TextField
+                  label="Hobbies"
                   name="hobbies"
-                  placeholder="Skiing, Hiking, Martial Arts, etc. "
                   onChange={this.handleChange}
                 />
               </div>
@@ -627,14 +492,6 @@ export default class ResumeForm extends React.Component {
         </div>
         <div className="row justify-content-end">
           {/* <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>   */}
-          <Fab
-            className=" mt-2 me-5"
-            style={{ width: "190px" }}
-            variant="extended"
-            onClick={() => this.nextPath("/dashboard")}
-          >
-            Close form
-          </Fab>
         </div>
       </main>
     );
