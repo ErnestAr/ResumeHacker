@@ -19,6 +19,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { Grid } from "@material-ui/core";
 
 const zip = new JSZip();
 const fs = require("fs");
@@ -165,14 +166,16 @@ export default class ResumeForm extends React.Component {
   }
   render() {
     return (
-      <main>
-        <div className="card">
-          <form className="form-card">
-            <h3 className=" col-3 my-2 ">General Information</h3>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
+      <>
+       <div className="card">
+         <form noValidate autoComplete="off">
+         <Grid container spacing={3}>
+            <Grid item xs={12}>
+                <h3 >General Information</h3>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
                 <TextField
-                  id="standard-basic"
+                 id="standard-basic"
                   name="firstName"
                   onChange={this.handleChange}
                   margin="normal"
@@ -181,8 +184,8 @@ export default class ResumeForm extends React.Component {
                   label="First Name"
                   autoFocus
                 />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   id="standard-basic"
                   margin="normal"
@@ -193,307 +196,119 @@ export default class ResumeForm extends React.Component {
                   name="lastName"
                   onChange={this.handleChange}
                 />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
-                  id="lname"
+                   id="standard-basic"
+                   margin="normal"
+                   required
+                   fullWidth
+                   autoFocus
                   name="address"
                   label="Address(Country, state)"
                   onChange={this.handleChange}
                 />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   label="Website/Portfolio link"
-                  id="lname"
+                  id="standard-basic"
+                   margin="normal"
+                   required
+                   fullWidth
+                   autoFocus
                   name="website"
                   onChange={this.handleChange}
                 />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   label="Email"
-                  id="email"
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
                   name="email"
                   onChange={this.handleChange}
                 />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
+              </Grid>
+
+
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   label="Phone"
-                  id="mob"
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
                   name="cell"
                   onChange={this.handleChange}
                 />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
+              </Grid>
+
+              
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="GitHub"
+                  name="github"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+      
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Linkedin"
+                  name="linkedin"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+       
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Facebook"
+                  name="facebook"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12} md={12}>
+                <TextField
+                  label="Phone"
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
                   label="Professional Overiew"
                   name="overview"
                   onChange={this.handleChange}
                 />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  Label="GitHub"
-                  name="github"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  Label="Linkedin"
-                  name="linkedin"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  Label="Facebook"
-                  name="facebook"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-          </form>
-          <label className="form-control-label px-3 my-2">
-            Upload photo or avatar image
-            <DropzoneArea label="Photo" onChange={this.handleDrop.bind(this)} />
-          </label>
-        </div>
-        <div className="card">
-          <form className="form-card">
-            <h3 className=" col-3 my-2 ">Work Experience</h3>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Company"
-                  name="company1"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Position"
-                  name="position1"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  label="Description"
-                  name="description1"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Start Date"
-                  name="startdate1"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="End Date"
-                  name="enddate1"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className="card">
-          <form className="form-card">
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Company"
-                  name="company2"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Position"
-                  name="position2"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  label="Description"
-                  name="description2"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Start Date"
-                  name="startdate2"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="End Date"
-                  name="enddate2"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className="card">
-          <form className="form-card">
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Company"
-                  name="company3"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Position"
-                  name="position3"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  label="Description"
-                  name="description3"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="Start Date"
-                  name="startdate3"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group col-sm-6 flex-column d-flex">
-                <TextField
-                  label="End Date"
-                  name="enddate3"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className="card">
-          <div className="form-card classes" style={this.classes.root}>
-            <h3 className=" col-3 my-2 "> Technical Skills</h3>
-            <p className="  my-2 " style={{ color: "grey" }}>
-              Select technology and level of proficiency ("1" - Beginner,
-              "10"-Expert).
-            </p>
-            <Autocomplete
-              multiple
-              id="tags-filled"
-              options={skills.map((option) => option.name)}
-              freeSolo
-              renderTags={(value, getTagProps) =>
-                value.map((option, index) => (
-                  <Chip
-                    variant="outlined"
-                    label={option}
-                    {...getTagProps({ index })}
-                  />
-                ))
-              }
-              renderInput={(params) => (
-                <TextField {...params} variant="filled" label="Skills" />
-              )}
-              onChange={(event, value) => {
-                this.handleClickOpen(value);
-              }}
-            />
-            <Dialog
-              open={this.state.opendialog}
-              onClose={this.handleClose}
-              aria-labelledby="form-dialog-title"
-            >
-              <DialogTitle id="form-dialog-title">
-                Technical Skill Level
-              </DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  Enter a number between 1 and 10 to indicate your level of
-                  proficiency in the skill you selected.
-                </DialogContentText>
-                <TextField
-                  autoFocus
-                  margin="dense"
-                  id="name"
-                  type="email"
-                  fullWidth
-                  value={this.state.currentLevel}
-                  onChange={this.updateInputValue}
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={this.handleClose} color="primary">
-                  Submit
-                </Button>
-              </DialogActions>
-            </Dialog>
-          </div>
-        </div>
-        <div className="card">
-          <form className="form-card">
-            <h3 className=" col-4 my-2 ">Non-work related activities</h3>
-            <div className="row justify-content-between text-left">
-              <div className="form-group col-12 flex-column d-flex">
-                <TextField
-                  label="Hobbies"
-                  name="hobbies"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row justify-content-end">
-              {/* <h3 className=" col-3 text-center bg-color rounded btn-acc acc p-2 me-2 mt-2" onClick={this.createzip}>Create Resume</h3> */}
-              <Fab
-                className=" mt-2 me-2"
-                variant="extended"
-                onClick={this.createzip}
-              >
-                Create resume
-              </Fab>
-            </div>
-          </form>
-        </div>
-        <div className="row justify-content-end">
-          {/* <h3 className=" text-center bg-color rounded btn-acc acc me-5 p-2" style={{width: "265px"}} onClick={() => this.nextPath('/dashboard')}>Close Form</h3>   */}
-        </div>
-      </main>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12}>
+                <DropzoneArea filesLimit={1} dropzoneText="Drag and drop your photo/avatar or click" label="Photo" onChange={this.handleDrop.bind(this)} />
+              </Grid>
+              
+         </Grid>
+         </form>
+       </div>
+      </>
     );
   }
 }
