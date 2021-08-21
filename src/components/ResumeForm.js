@@ -21,6 +21,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Grid } from "@material-ui/core";
 
+
 const zip = new JSZip();
 const fs = require("fs");
 
@@ -169,7 +170,7 @@ export default class ResumeForm extends React.Component {
       <>
        <div className="card">
          <form noValidate autoComplete="off">
-         <Grid container spacing={3}>
+         <Grid container spacing={3} >
             <Grid item xs={12}>
                 <h3 >General Information</h3>
             </Grid>
@@ -304,7 +305,303 @@ export default class ResumeForm extends React.Component {
               <Grid item xs={12} sm={12} md={12}>
                 <DropzoneArea filesLimit={1} dropzoneText="Drag and drop your photo/avatar or click" label="Photo" onChange={this.handleDrop.bind(this)} />
               </Grid>
-              
+              <Grid item xs={12}>
+              <h3 >Work Experience</h3>
+            </Grid>
+            <Grid item xs={12}>
+              <h4 style={{ color: "grey" }}>Company 1</h4>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Company"
+                  name="company1"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Position"
+                  name="position1"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+        
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Description"
+                  name="description1"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+        
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Start Date"
+                  name="startdate1"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="End Date"
+                  name="enddate1"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+              <h4 style={{ color: "grey" }} >Company 2</h4>
+            </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Company"
+                  name="company3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Position"
+                  name="position3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+        
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Description"
+                  name="description3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+        
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Start Date"
+                  name="startdate3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="End Date"
+                  name="enddate3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+              <h4 style={{ color: "grey" }}>Company 3</h4>
+            </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Company"
+                  name="company3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Position"
+                  name="position3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+        
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Description"
+                  name="description3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+        
+            
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Start Date"
+                  name="startdate3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="End Date"
+                  name="enddate3"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <h3> Technical Skills</h3>
+              </Grid> 
+
+
+              <Grid item xs={12}>
+              <p style={{ color: "grey" }}>
+                Select technology and level of proficiency ("1" - Beginner,
+                "10"-Expert).
+              </p>
+              </Grid> 
+            <Grid item xs={12}>
+            <Autocomplete
+              multiple
+              id="tags-filled"
+              options={skills.map((option) => option.name)}
+              freeSolo
+              renderTags={(value, getTagProps) =>
+                value.map((option, index) => (
+                  <Chip
+                    variant="outlined"
+                    label={option}
+                    {...getTagProps({ index })}
+                  />
+                ))
+              }
+              renderInput={(params) => (
+                <TextField {...params} variant="filled" label="Skills" />
+              )}
+              onChange={(event, value) => {
+                this.handleClickOpen(value);
+              }}
+            />
+            <Dialog
+              open={this.state.opendialog}
+              onClose={this.handleClose}
+              aria-labelledby="form-dialog-title"
+            >
+              <DialogTitle id="form-dialog-title">
+                Technical Skill Level
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  Enter a number between 1 and 10 to indicate your level of
+                  proficiency in the skill you selected.
+                </DialogContentText>
+                <TextField
+                  autoFocus
+                  margin="dense"
+                  id="name"
+                  type="email"
+                  fullWidth
+                  value={this.state.currentLevel}
+                  onChange={this.updateInputValue}
+                />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={this.handleClose} color="primary">
+                  Submit
+                </Button>
+              </DialogActions>
+            </Dialog>
+            </Grid>
+            <Grid item xs={12}>
+            <h3 >Non-work related activities</h3>
+            </Grid>
+
+            <Grid item xs={12} >
+                <TextField
+                  id="standard-basic"
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoFocus
+                  label="Hobbies"
+                  name="hobbies"
+                  onChange={this.handleChange}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+              <Fab
+                variant="extended"
+                onClick={this.createzip}
+              >
+                Create resume
+              </Fab>
+            </Grid>
          </Grid>
          </form>
        </div>
