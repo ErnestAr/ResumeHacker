@@ -388,7 +388,7 @@ export default class ResumeForm extends React.Component {
                   fullWidth
                   autoFocus
                   label="Company"
-                  name="company3"
+                  name="company2"
                   onChange={this.handleChange}
                 />
               </Grid>
@@ -401,7 +401,7 @@ export default class ResumeForm extends React.Component {
                   fullWidth
                   autoFocus
                   label="Position"
-                  name="position3"
+                  name="position2"
                   onChange={this.handleChange}
                 />
               </Grid>
@@ -415,7 +415,7 @@ export default class ResumeForm extends React.Component {
                   fullWidth
                   autoFocus
                   label="Description"
-                  name="description3"
+                  name="description2"
                   onChange={this.handleChange}
                 />
               </Grid>
@@ -429,7 +429,7 @@ export default class ResumeForm extends React.Component {
                   fullWidth
                   autoFocus
                   label="Start Date"
-                  name="startdate3"
+                  name="startdate2"
                   onChange={this.handleChange}
                 />
               </Grid>
@@ -442,7 +442,7 @@ export default class ResumeForm extends React.Component {
                   fullWidth
                   autoFocus
                   label="End Date"
-                  name="enddate3"
+                  name="enddate2"
                   onChange={this.handleChange}
                 />
               </Grid>
@@ -581,7 +581,6 @@ export default class ResumeForm extends React.Component {
             <Grid item xs={12}>
             <h3 >Non-work related activities</h3>
             </Grid>
-
             <Grid item xs={12} >
                 <TextField
                   id="standard-basic"
@@ -595,12 +594,8 @@ export default class ResumeForm extends React.Component {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
-              <Fab
-                variant="extended"
-                onClick={this.createzip}
-              >
-                Create resume
-              </Fab>
+        
+              <Button variant="contained"  onClick={this.createzip} style={{ backgroundColor: "#3A7CA5", color: "white" }}> Create resume</Button>
             </Grid>
          </Grid>
          </form>

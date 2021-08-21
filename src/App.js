@@ -11,6 +11,7 @@ import About from "./components/About"
 // import UpdateProfile from "./UpdateProfile"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ResumeForm from "./components/ResumeForm"
+import ResumeFormBlue from "./components/ResumeFormBlue"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path="/about" component={About} />
               <Route path="/resumedev" component={ResumeForm} />
+              <Route exact path="/resumejunior" component={ResumeFormBlue} />
             </Switch>
           </AuthProvider>
         </Router>

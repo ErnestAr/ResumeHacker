@@ -48,7 +48,7 @@ export default function Templates() {
     history.push("/resumedev");
   };
   function handleClickblue() {
-    history.push("/dashboard/resumeblue");
+    history.push("/resumejunior");
   };
   function handleClick1() {
     // direct user to different url
