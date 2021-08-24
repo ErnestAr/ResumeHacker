@@ -12,6 +12,7 @@ import About from "./components/About"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ResumeForm from "./components/ResumeForm"
 import ResumeFormBlue from "./components/ResumeFormBlue"
+import UpdateUser from "./components/UpdateUser"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/about" component={About} />
               <Route path="/resumedev" component={ResumeForm} />
               <Route exact path="/resumejunior" component={ResumeFormBlue} />
+              <Route path="/updateuser" component={UpdateUser} />
             </Switch>
           </AuthProvider>
         </Router>

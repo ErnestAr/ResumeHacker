@@ -4,15 +4,11 @@ import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import htmlTemp from "../download/template1/templatehtml1";
 import cssTemp from "../download/template1/templatecss1";
-import { FaGithub } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import Chip from "@material-ui/core/Chip";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { DropzoneArea } from "material-ui-dropzone";
-import Fab from "@material-ui/core/Fab";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -20,6 +16,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Grid } from "@material-ui/core";
+import Divider from '@material-ui/core/Divider';
+
 
 
 const zip = new JSZip();
@@ -64,6 +62,7 @@ const skills = [
 const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export default class ResumeForm extends React.Component {
+  
   state = {
     firstName: "",
     lastName: "",
@@ -167,12 +166,13 @@ export default class ResumeForm extends React.Component {
   }
   render() {
     return (
-      <>
-       <div className="card">
+
+       <div className=" text-color">
          <form noValidate autoComplete="off">
-         <Grid container spacing={3} >
+         <Grid container spacing={3} style={{padding: "15px"}} >
             <Grid item xs={12}>
                 <h3 >General Information</h3>
+               
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
                 <TextField
@@ -304,6 +304,7 @@ export default class ResumeForm extends React.Component {
               </Grid>
               <Grid item xs={12} sm={12} md={12}>
                 <DropzoneArea filesLimit={1} dropzoneText="Drag and drop your photo/avatar or click" label="Photo" onChange={this.handleDrop.bind(this)} />
+                
               </Grid>
               <Grid item xs={12}>
               <h3 >Work Experience</h3>
@@ -514,12 +515,11 @@ export default class ResumeForm extends React.Component {
                   name="enddate3"
                   onChange={this.handleChange}
                 />
+                 
               </Grid>
               <Grid item xs={12}>
                 <h3> Technical Skills</h3>
               </Grid> 
-
-
               <Grid item xs={12}>
               <p style={{ color: "grey" }}>
                 Select technology and level of proficiency ("1" - Beginner,
@@ -594,13 +594,11 @@ export default class ResumeForm extends React.Component {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
-        
-              <Button variant="contained"  onClick={this.createzip} style={{ backgroundColor: "#3A7CA5", color: "white" }}> Create resume</Button>
+              <Button variant="contained"  onClick={this.createzip} style={{ backgroundColor: "#3A7CA5", color: "white", marginTop: "20px"}}> Create resume</Button>
             </Grid>
          </Grid>
          </form>
        </div>
-      </>
     );
   }
 }
