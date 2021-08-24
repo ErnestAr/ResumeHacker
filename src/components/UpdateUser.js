@@ -122,17 +122,7 @@ export default function Login() {
             inputRef={emailRef}
           />
         </Grid>
-        <Grid item xs={12}>
-          <TextField
-                variant="outlined"
-                required
-                fullWidth
-                inputRef={passwordConfirmRef}
-                label="Current Password"
-                type="password"
-                id="password-confirm"
-            />
-        </Grid>
+
             <Grid item xs={12}>
           <TextField
             variant="outlined"
@@ -148,6 +138,19 @@ export default function Login() {
             
           />
         </Grid>
+        <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                inputRef={passwordConfirmRef}
+                label="Confirm Password"
+                type="password"
+                id="password-confirm"
+                
+                
+              />
+              </Grid>
           <Button 
             type="submit"
             fullWidth

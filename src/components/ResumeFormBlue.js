@@ -169,10 +169,10 @@ export default class ResumeForm extends React.Component {
 
   render() {
     return (
-      <>
-      <div className="card">
+  
+      <div className="text-color" >
         <form noValidate autoComplete="off">
-        <Grid container spacing={3} >
+        <Grid container spacing={3} style={{padding: "15px"}} >
            <Grid item xs={12}>
                <h3 >General Information</h3>
            </Grid>
@@ -571,7 +571,6 @@ export default class ResumeForm extends React.Component {
         </Grid>
         </form>
       </div>
-     </>
     );
   }
 }

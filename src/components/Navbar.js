@@ -62,6 +62,9 @@ export default function Navbar () {
     function handleAbout() {
       history.push("/about");
   }
+  function handleAccount() {
+    history.push("/account");
+}
 
     return (
         <AppBar position="static" className={classes.colormain}>
@@ -79,6 +82,7 @@ export default function Navbar () {
             </Typography>
             <Button color="inherit" onClick={handleDashboard}>Dashboard</Button>
             <Button color="inherit" onClick={handleAbout}>About</Button>
+            <Button color="inherit" onClick={handleAccount}>Account</Button>
             {currentUser.currentUser ?
             <Button className={classes.loginButton} color="inherit" onClick={handleLogout}>
             Logout

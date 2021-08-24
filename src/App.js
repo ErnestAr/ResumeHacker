@@ -22,6 +22,7 @@ function App() {
             <Navbar />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/account" component={UpdateUser} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
