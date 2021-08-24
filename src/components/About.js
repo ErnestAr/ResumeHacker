@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   contact: {  
-
+    color: "#0A2239"
   },
   formsection: {
     backgroundColor: "#ACEDFF",
@@ -41,10 +41,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 80,
     paddingTop: theme.spacing(10),
     color: '#3A7CA5',
-    backgroundColor: "#D6F6FF",
     textAlign: 'center',
     width: "100%",
-    height: "300px",
+    height: "200px",
   },
   text2: {
       fontSize: "1.5em",
@@ -54,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       width: "100%",
       height: "fit-content",
+  },
+  button: {
+    backgroundColor: "#3A7CA5",
   }
 }));
 
@@ -88,14 +90,14 @@ export default function About() {
         </Grid>
         <Grid item lg={4} md={4} sm={12} xs={12} >
             <Card className={classes.card} item>
-            <CardContent>
+            <CardContent className="text-color">
                 <Typography gutterBottom variant="h5">
                 Contact Us
             </Typography> 
                 <Typography variant="body2" color="textSecondary" component="p" gutterBottom>
                 Fill up the form and our team will get back to you within 24 hours.
             </Typography> 
-                <form onSubmit={sendEmail}>
+                <form onSubmit={sendEmail} >
                 <Grid container spacing={1}>
                     <Grid xs={12} sm={6} item>
                     <TextField placeholder="Enter first name" label="First Name" variant="outlined" fullWidth required />
@@ -113,7 +115,7 @@ export default function About() {
                     <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined" fullWidth required />
                     </Grid>
                     <Grid item xs={12}>
-                    <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
+                    <Button type="submit" variant="contained" color="primary" fullWidth className={classes.button}>Submit</Button>
                     </Grid>
                 </Grid>
                 </form>

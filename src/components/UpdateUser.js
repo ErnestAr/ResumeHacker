@@ -97,12 +97,10 @@ export default function Login() {
         })
     }
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" className="text-color">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+      
         <Typography component="h1" variant="h5">
           Change User Information
         </Typography>
@@ -164,9 +162,7 @@ export default function Login() {
         </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
+  
      
     </Container>
   );

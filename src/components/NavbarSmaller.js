@@ -78,23 +78,23 @@ export default function Navbar () {
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
         >
-          <List>
+          <List className="text-color">
               <ListItem button >
                 <ListItemText onClick={handleDashboard} primary="Dashboard" />
               </ListItem>
               <ListItem button >
-                <ListItemText primary="Account" />
+                <ListItemText onClick={handleAccount} primary="Account" />
               </ListItem>
               <ListItem button >
-                <ListItemText primary="About" />
+                <ListItemText onClick={handleAbout} primary="About" />
               </ListItem>
               {currentUser.currentUser ?
               <ListItem button >
-                <ListItemText primary="Logout" />
+                <ListItemText  onClick={handleLogout} primary="Logout" />
               </ListItem>
               :
             <ListItem button >
-            <ListItemText primary="Login" />
+            <ListItemText  onClick={handleLogin} primary="Login" />
             </ListItem>
             }
 
