@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useAuth } from "../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
+import {FcDocument} from "react-icons/fc"
 
 
 const useStyles = makeStyles(theme => ({
@@ -16,10 +17,20 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    marginRight: 0,
+    padding: 0,
+    fontFamily:'Courgette , cursive',
+    fontSize: '1.5rem',
+  },
+  logo: {
+      marginRight: theme.spacing(2),
+      color: "white",
+      flexGrow: 1,
+      
   },
   loginButton: {
-      border: "1px solid white",
-      borderRadius: "5px",
+    border: "1px solid white",
+    borderRadius: "5px",
   },
   colormain: {
     backgroundColor: "#3A7CA5",
@@ -51,10 +62,6 @@ export default function Navbar () {
         history.push("/login");
     };
 
-    function handleHome() {
-        history.push("/");
-    }
-
     function handleDashboard() {
         history.push("/dashboard");
     }
@@ -67,16 +74,9 @@ export default function Navbar () {
 }
 
     return (
-        <AppBar position="static" className={classes.colormain}>
+        <AppBar position="static" className={classes.colormain} >
         <Toolbar>
-            <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            className={classes.menuButton}
-            >
-            <MenuIcon />
-            </IconButton>
+           
             <Typography variant="h6" className={classes.title}>
             ResumeHacker
             </Typography>
@@ -93,5 +93,6 @@ export default function Navbar () {
             }
         </Toolbar>
         </AppBar>
+
     );
 };

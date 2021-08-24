@@ -4,7 +4,6 @@ import { AuthProvider } from "./contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Dashboard from "./components/Dashboard"
 import Login from "./components/Login"
-import Navbar from "./components/Navbar"
 import PrivateRoute from "./components/PrivateRoute"
 import ForgotPassword from "./components/ForgotPassword"
 import About from "./components/About"
@@ -13,13 +12,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ResumeForm from "./components/ResumeForm"
 import ResumeFormBlue from "./components/ResumeFormBlue"
 import UpdateUser from "./components/UpdateUser"
+import NavbarChange from "./components/NavbarChange"
+
 
 function App() {
   return (
     <>
         <Router>
           <AuthProvider>
-            <Navbar />
+            <NavbarChange />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/account" component={UpdateUser} />
