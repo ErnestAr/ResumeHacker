@@ -15,7 +15,7 @@
 - [Contact-Information](#contact-information)
 
 ## Link to deployed application: 
-https://resumehacker.herokuapp.com/
+https://resume-hacker.netlify.app/
 
 ## Screenshots:
 
